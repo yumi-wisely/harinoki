@@ -297,15 +297,15 @@ section { position: relative; }
 
 .hero-logo-wrap {
   position: relative;
-  width: clamp(280px, 42vw, 380px);
-  height: clamp(280px, 42vw, 380px);
-  margin: 0 auto 36px;
+  width: clamp(200px, 28vw, 260px);
+  height: clamp(200px, 28vw, 260px);
+  margin: 0 auto 16px;
 }
 
 .hero-logo-wrap::before {
   content: "";
   position: absolute;
-  inset: -42px;
+  inset: -36px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(203,170,107,0.38), transparent 70%);
   animation: glow-pulse 5s ease-in-out infinite;
@@ -332,6 +332,32 @@ section { position: relative; }
 @keyframes glow-pulse {
   0%, 100% { opacity: 0.5; transform: scale(1); }
   50% { opacity: 0.9; transform: scale(1.08); }
+}
+
+.hero-brand-text {
+  text-align: center;
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fade-up 1s ease 0.4s forwards;
+}
+
+.hero-brand-en {
+  display: block;
+  font-family: var(--font-en);
+  font-size: clamp(22px, 3vw, 32px);
+  letter-spacing: 0.32em;
+  color: var(--teal-deep);
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.hero-brand-jp {
+  display: block;
+  font-family: var(--font-jp-serif);
+  font-size: clamp(13.5px, 1.4vw, 17px);
+  letter-spacing: 0.45em;
+  color: var(--gold-deep);
+  font-weight: 500;
 }
 
 .hero h1 {
