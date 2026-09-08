@@ -186,25 +186,40 @@ section { position: relative; }
 .brand {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   white-space: nowrap;
 }
 
 .brand img {
-  width: clamp(48px, 4.5vw, 62px);
-  height: clamp(48px, 4.5vw, 62px);
-  transition: transform 0.6s ease;
+  width: clamp(44px, 4.2vw, 54px);
+  height: clamp(44px, 4.2vw, 54px);
+  transition: opacity 0.3s ease;
 }
 
-.brand:hover img { transform: rotate(8deg) scale(1.06); }
+.brand:hover img { opacity: 0.85; }
 
-.brand-name {
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.brand-sub {
+  font-family: var(--font-jp-sans);
+  font-size: clamp(10.5px, 0.7vw + 7.5px, 11.5px);
+  letter-spacing: 0.16em;
+  color: var(--gold-deep);
+  font-weight: 500;
+}
+
+.brand-main {
   font-family: var(--font-jp-serif);
   font-weight: 500;
-  font-size: clamp(17px, 1.8vw + 8px, 22px);
+  font-size: clamp(14.5px, 1.1vw + 9.5px, 16.5px);
   letter-spacing: 0.12em;
   color: var(--teal-deep);
-  white-space: nowrap;
 }
 
 .main-nav {
