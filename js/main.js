@@ -36,6 +36,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /* ---------- お悩みカードの横スクロール ---------- */
+  if (window.HarinokiCarousel) {
+    window.HarinokiCarousel.init(
+      document.getElementById('concernList'),
+      document.getElementById('concernPrev'),
+      document.getElementById('concernNext')
+    );
+  }
+
+  /* ---------- サロン写真の横スクロール ---------- */
+  if (window.HarinokiCarousel) {
+    window.HarinokiCarousel.init(
+      document.getElementById('salonList'),
+      document.getElementById('salonPrev'),
+      document.getElementById('salonNext')
+    );
+  }
+
   /* ---------- Reveal-on-scroll ---------- */
   var revealEls = document.querySelectorAll('.reveal');
 
