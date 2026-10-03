@@ -37,12 +37,13 @@
 
     <nav class="main-nav" id="mainNav">
       <ul>
-        <li><a href="#concept" class="nav-link">コンセプト</a></li>
+        <li><a href="#concerns" class="nav-link">お悩み</a></li>
         <li><a href="#salon" class="nav-link">サロン紹介</a></li>
         <li><a href="#therapist" class="nav-link">鍼灸師紹介</a></li>
         <li><a href="#menu" class="nav-link">メニュー</a></li>
         <li><a href="#news" class="nav-link">お知らせ</a></li>
         <li><a href="#access" class="nav-link">アクセス</a></li>
+        <li><a href="#concept" class="nav-link">コンセプト</a></li>
       </ul>
       <a href="#access" class="btn btn-primary">ご予約・お問い合わせ</a>
     </nav>
@@ -51,11 +52,20 @@
       <span></span><span></span><span></span>
     </button>
   </div>
+
+  <!-- お知らせティッカー: 内容は js/news-data.js から自動生成されます -->
+  <div class="news-ticker" aria-label="お知らせ">
+    <span class="news-ticker-label">NEWS</span>
+    <div class="news-ticker-viewport">
+      <div class="news-ticker-track" id="newsTickerTrack"></div>
+    </div>
+  </div>
 </header>
 
 <!-- ==================== Hero ==================== -->
 <section class="hero" id="home">
   <div class="hero-inner">
+    <h1>身体は巡り、美は深化する。</h1>
     <div class="hero-logo-wrap">
       <img src="assets/symbol-transparent.png" alt="辻堂 鍼灸院 鍼ノ木" class="hero-logo">
     </div>
@@ -63,60 +73,74 @@
       <span class="hero-brand-en">HARINOKI</span>
       <span class="hero-brand-jp">鍼 ノ 木</span>
     </div>
-    <h1>身体は巡り、<br class="br-mobile">美は深化する。</h1>
     <p class="lead">
       鍼ノ木(はりのき)は、東洋医学の知恵と丁寧な施術で、気血の巡りを整え、
       心とからだ本来の美しさを引き出す鍼灸・整体・美容サロンです。
       カウンセリングからお悩みやありたい姿をお伺いし、鍼・灸・整体・マッサージをお客様に合わせて調合し施術いたします。
     </p>
-    <div class="hero-actions">
-      <a href="#access" class="btn btn-primary">ご予約はこちら</a>
-      <a href="#menu" class="btn btn-outline">メニューを見る</a>
-    </div>
   </div>
   <span class="scroll-cue"></span>
 </section>
 
-<!-- ==================== Concept ==================== -->
-<section class="concept" id="concept">
-  <div class="container concept-grid">
-    <div class="concept-copy reveal">
-      <p class="eyebrow">Concept</p>
-      <h2 class="section-title">美と健康、<br>ふたつでひとつ。</h2>
-      <p class="slogan">「身体は巡り、美は深化する」</p>
-      <p>
-        鍼ノ木という名前には、一本の鍼のように芯を持ちながら、静かに根を張るヒノキの木のように、
-        揺るがない美しさを育てていきたいという想いを込めています。
-      </p>
-      <p>
-        体調を整えることは、日々の美しさを育てること。鍼灸の力で気・血・水の巡りを促し、
-        外側からのケアだけでは届かない、内側から満ちていく健やかな美しさへ。
-        鍼ノ木は、お一人おひとりの体質やお悩みに寄り添いながら、深化していく美と健康のお手伝いをいたします。
-      </p>
+<!-- ==================== Concerns ==================== -->
+<section class="concerns" id="concerns">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Concern</p>
+      <h2 class="section-title">こんなお悩み・不調に、</h2>
     </div>
 
-    <div class="pillars">
-      <div class="pillar reveal reveal-delay-1">
-        <span class="pillar-num">01</span>
-        <div>
-          <h3>巡り ― Circulation</h3>
-          <p>鍼灸で気血の流れを整え、冷えやむくみ、こりのない、めぐりの良いからだへ。</p>
+    <div class="concern-grid reveal">
+      <div class="concern-card">
+        <span class="concern-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3.5l1.8 5.5 3-11 2 5.5h3.2l1.5-2.8 1 2.8H21"/></svg>
+        </span>
+        <h3>身体のお悩み</h3>
+        <div class="concern-tags">
+          <span>肩・首こり</span>
+          <span>背中・腰・股関節の痛みや張り</span>
+          <span>むくみ</span>
+          <span>冷え</span>
         </div>
       </div>
-      <div class="pillar reveal reveal-delay-2">
-        <span class="pillar-num">02</span>
-        <div>
-          <h3>癒し ― Healing</h3>
-          <p>静かで落ち着いた空間の中、心とからだをゆるめる特別なひとときをお届けします。</p>
+
+      <div class="concern-card">
+        <span class="concern-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3.8a8.3 8.3 0 1 0 0 16.4A6.8 6.8 0 1 1 14 3.8Z"/></svg>
+        </span>
+        <h3>女性特有のお悩み</h3>
+        <div class="concern-tags">
+          <span>生理痛</span>
+          <span>PMS</span>
+          <span>更年期症状</span>
+          <span>不妊</span>
+          <span>妊娠中の不調</span>
         </div>
       </div>
-      <div class="pillar reveal reveal-delay-3">
-        <span class="pillar-num">03</span>
-        <div>
-          <h3>深化 ― Refinement</h3>
-          <p>一度きりのケアで終わらない、通うほどに深まる美しさと健やかさを育てます。</p>
+
+      <div class="concern-card">
+        <span class="concern-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="9" cy="10.2" r="0.9" fill="currentColor" stroke="none"/><circle cx="15" cy="10.2" r="0.9" fill="currentColor" stroke="none"/><path d="M8.5 15c1 1.2 2.2 1.8 3.5 1.8s2.5-.6 3.5-1.8"/></svg>
+        </span>
+        <h3>お顔のお悩み</h3>
+        <div class="concern-tags">
+          <span>眼精疲労</span>
+          <span>たるみ</span>
+          <span>くすみ</span>
+          <span>エラの張り</span>
+          <span>ほうれい線</span>
+          <span>眉間のシワ</span>
         </div>
       </div>
+    </div>
+
+    <p class="concern-note reveal">
+      鍼ノ木では、お一人おひとりのお悩みや体質に合わせ、鍼・灸・整体を鍼灸整体師が調合しオーダーメイドの施術でアプローチします
+    </p>
+
+    <div class="hero-actions concern-actions reveal">
+      <a href="#access" class="btn btn-primary">ご予約はこちら</a>
+      <a href="#menu" class="btn btn-outline">メニューを見る</a>
     </div>
   </div>
 </section>
@@ -225,7 +249,7 @@
     -->
     <div class="menu-groups reveal">
       <div>
-        <h3 class="menu-group-title">初回コース<span>WHOLE BODY</span></h3>
+        <h3 class="menu-group-title">初めてお越しいただく方へ 初回コース<span>WHOLE BODY</span></h3>
         <div class="menu-items">
           <div class="menu-item">
             <div class="menu-item-name">カウンセリング + オーダーメイド鍼灸整体＋美顔鍼<small>その日のご体調やお悩みに合わせて鍼灸と整体を調合・美顔鍼付き / 75分</small></div>
@@ -235,7 +259,7 @@
       </div>
 
       <div>
-        <h3 class="menu-group-title">2回目からの通常スポットメニュー<span>BEAUTY</span></h3>
+        <h3 class="menu-group-title">2回目からのスポットメニュー<span>BEAUTY</span></h3>
         <div class="menu-items">
           <div class="menu-item">
             <div class="menu-item-name">オーダーメイド鍼灸整体<small>鍼灸と整体をお悩みに沿って調合・首から下のお身体 / 70分</small></div>
@@ -246,8 +270,8 @@
             <div class="menu-item-price">¥15,000</div>
           </div>
           <div class="menu-item">
-            <div class="menu-item-name">美顔鍼ショート<small>お顔と頭のみのショートメニュー / 45分</small></div>
-            <div class="menu-item-price">¥8,500</div>
+            <div class="menu-item-name">ロイヤルハリネズミ美容鍼<small>お顔と頭に特化した美容鍼治療 / 40分</small></div>
+            <div class="menu-item-price">¥9,500</div>
           </div>
         </div>
       </div>
@@ -262,50 +286,23 @@
             <thead>
               <tr>
                 <th>コース名</th>
-                <th>オーダーメイド<br>全身（70分）</th>
-                <th>全身 ＋ 美顔鍼<br>（70分）</th>
-                <th>美顔鍼ショート<br>（45分）</th>
+                <th>オーダーメイド鍼灸整体</th>
+                <th>オーダーメイド鍼灸整体＋美顔鍼</th>
+                <th>ロイヤルハリネズミ美容鍼</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="plan-name">スポット（都度）</td>
-                <td>¥12,000</td>
-                <td>¥15,000</td>
+                <td class="plan-name">月1回コース（1回料金）</td>
+                <td>¥11,000</td>
+                <td>¥13,500</td>
                 <td>¥8,500</td>
               </tr>
-              <tr>
-                <td class="plan-name">月1回コース</td>
-                <td>
-                  ¥11,000
-                  <span class="discount">（1,000円お得）</span>
-                </td>
-                <td>
-                  ¥12,500
-                  <span class="discount">（2,500円お得）</span>
-                </td>
-                <td>
-                  ¥7,500
-                  <span class="discount">（1,000円お得）</span>
-                </td>
-              </tr>
               <tr class="recommended-row">
-                <td class="plan-name">
-                  <span class="badge">一番人気</span><br>
-                  月2回コース
-                </td>
-                <td>
-                  <span class="price-main">¥10,000</span><small>/回</small>
-                  <span class="discount">（2,000円お得/回）</span>
-                </td>
-                <td>
-                  <span class="price-main">¥11,000</span><small>/回</small>
-                  <span class="discount highlight">（4,000円お得/回）</span>
-                </td>
-                <td>
-                  <span class="price-main">¥6,500</span><small>/回</small>
-                  <span class="discount">（2,000円お得/回）</span>
-                </td>
+                <td class="plan-name"><span class="badge">人気</span>月2回コース（1回料金）</td>
+                <td>¥10,000</td>
+                <td>¥12,000</td>
+                <td>¥7,500</td>
               </tr>
             </tbody>
           </table>
@@ -313,15 +310,14 @@
       </div>
 
     </div><!-- /.menu-groups -->
-  </div><!-- /.container -->
-</section><!-- /.menu -->
 
     <p class="menu-note reveal">
-      ※ 妊娠中の方、持病のある方は事前にご相談ください。<br>
-      ※ 料金は全て税込表示です。回数券・ご紹介割引などの詳細はお問い合わせください。
+      ＊価格は全て税込価格です<br>
+      ＊男性の方はご紹介のみとさせていただきます<br>
+      ＊マタニティー整体もおこなっております、ご妊娠中の方はお知らせください
     </p>
-  </div>
-</section>
+  </div><!-- /.container -->
+</section><!-- /.menu -->
 
 <!-- ==================== News ==================== -->
 <section class="news" id="news">
@@ -332,28 +328,8 @@
       <p class="section-lead">サロンからのお知らせやコラムを掲載しています。</p>
     </div>
 
-    <!--
-      お知らせ一覧:
-      新しいお知らせを追加する場合は、.news-item ブロックをコピーして
-      一番上に貼り付けてください(このリストと news.html の両方を更新すると揃います)。
-    -->
-    <div class="news-list reveal">
-      <a class="news-item" href="news.html#news-1">
-        <span class="news-date">2026.09.08</span>
-        <span class="news-tag">お知らせ</span>
-        <span class="news-title">鍼ノ木、公式サイトをオープンいたしました。</span>
-      </a>
-      <a class="news-item" href="news.html#news-2">
-        <span class="news-date">2026.09.01</span>
-        <span class="news-tag">コラム</span>
-        <span class="news-title">秋の養生 ― 巡りを整えて美しく過ごすヒント</span>
-      </a>
-      <a class="news-item" href="news.html#news-3">
-        <span class="news-date">2026.08.20</span>
-        <span class="news-tag">お知らせ</span>
-        <span class="news-title">プレオープンのお知らせ</span>
-      </a>
-    </div>
+    <!-- お知らせ一覧: 内容は js/news-data.js から自動生成されます(最新3件) -->
+    <div class="news-list reveal" id="newsList"></div>
 
     <div class="news-more reveal">
       <a href="news.html" class="btn btn-outline">お知らせ一覧を見る</a>
@@ -389,7 +365,7 @@
       <!-- 住所・電話番号・営業時間は仮の内容です。実際の情報に差し替えてください。 -->
       <dl>
         <dt>院名</dt>
-        <dd>〜鍼灸整体美容サロン〜 鍼ノ木 / HARINOKI</dd>
+        <dd>鍼ノ木 / HARINOKI 〜鍼灸整体美容サロン〜</dd>
         <dt>住所</dt>
         <dd>〒251-0047<br>〒251-0047 神奈川県藤沢市辻堂２丁目７−１６ SHONAN SAKURAI Bldg.10F</dd>
         <dt>アクセス</dt>
@@ -402,21 +378,55 @@
         <dd>不定休</dd>
       </dl>
 
-      <div class="hero-actions">
-        <a href="tel:0000000000" class="btn btn-primary">電話でご予約</a>
-        <a href="#" class="btn btn-outline">LINEで予約</a>
+      <div class="hero-actions access-actions">
+        <a href="#" class="btn btn-primary">LINEで予約</a>
       </div>
+      <p class="access-note">＊ご不明点などお問い合わせもLINEからお気軽にどうぞ</p>
     </div>
   </div>
 </section>
 
-<!-- ==================== CTA ==================== -->
-<section class="cta-band">
-  <div class="container reveal">
-    <p class="eyebrow" style="color:#cbaa6b;">Reservation</p>
-    <h2 class="section-title">巡りを整える時間を、<br>あなたに。</h2>
-    <p>初めての方も、どうぞお気軽にご相談ください。専門の鍼灸師が丁寧にカウンセリングいたします。</p>
-    <a href="tel:0000000000" class="btn btn-outline">ご予約・お問い合わせ</a>
+<!-- ==================== Concept ==================== -->
+<section class="concept" id="concept">
+  <div class="container concept-grid">
+    <div class="concept-copy reveal">
+      <p class="eyebrow">Concept</p>
+      <h2 class="section-title">美と健康、<br>ふたつでひとつ。</h2>
+      <p class="slogan">「身体は巡り、美は深化する」</p>
+      <p>
+        鍼ノ木という名前には、一本の鍼のように芯を持ちながら、静かに根を張るヒノキの木のように、
+        揺るがない美しさを育てていきたいという想いを込めています。
+      </p>
+      <p>
+        体調を整えることは、日々の美しさを育てること。鍼灸の力で気・血・水の巡りを促し、
+        外側からのケアだけでは届かない、内側から満ちていく健やかな美しさへ。
+        鍼ノ木は、お一人おひとりの体質やお悩みに寄り添いながら、深化していく美と健康のお手伝いをいたします。
+      </p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar reveal reveal-delay-1">
+        <span class="pillar-num">01</span>
+        <div>
+          <h3>巡り ― Circulation</h3>
+          <p>鍼灸で気血の流れを整え、冷えやむくみ、こりのない、めぐりの良いからだへ。</p>
+        </div>
+      </div>
+      <div class="pillar reveal reveal-delay-2">
+        <span class="pillar-num">02</span>
+        <div>
+          <h3>癒し ― Healing</h3>
+          <p>静かで落ち着いた空間の中、心とからだをゆるめる特別なひとときをお届けします。</p>
+        </div>
+      </div>
+      <div class="pillar reveal reveal-delay-3">
+        <span class="pillar-num">03</span>
+        <div>
+          <h3>深化 ― Refinement</h3>
+          <p>一度きりのケアで終わらない、通うほどに深まる美しさと健やかさを育てます。</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -465,11 +475,13 @@
 
     <div class="footer-bottom">
       <span>&copy; 2026 HARINOKI. All rights reserved.</span>
-      <span>鍼灸院 鍼ノ木</span>
+      <span>鍼ノ木</span>
     </div>
   </div>
 </footer>
 
+<script src="js/news-data.js"></script>
+<script src="js/news-render.js"></script>
 <script src="js/main.js"></script>
 <script src="js/constitution-quiz.js"></script>
 </body>

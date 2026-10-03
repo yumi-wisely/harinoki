@@ -31,12 +31,13 @@
 
     <nav class="main-nav" id="mainNav">
       <ul>
-        <li><a href="index.html#concept" class="nav-link">コンセプト</a></li>
+        <li><a href="index.html#concerns" class="nav-link">お悩み</a></li>
         <li><a href="index.html#salon" class="nav-link">サロン紹介</a></li>
         <li><a href="index.html#therapist" class="nav-link">鍼灸師紹介</a></li>
         <li><a href="index.html#menu" class="nav-link">メニュー</a></li>
         <li><a href="news.html" class="nav-link">お知らせ</a></li>
         <li><a href="index.html#access" class="nav-link">アクセス</a></li>
+        <li><a href="index.html#concept" class="nav-link">コンセプト</a></li>
       </ul>
       <a href="index.html#access" class="btn btn-primary">ご予約・お問い合わせ</a>
     </nav>
@@ -59,53 +60,8 @@
 <!-- ==================== News list ==================== -->
 <section class="news-full">
   <div class="container">
-    <!--
-      お知らせを追加する場合は、この .news-item ブロックをコピーして
-      一番上に貼り付けてください。id は news-4, news-5 ... のように増やしてください。
-      本文は .news-body 内に記載します(現在はCSSで非表示になっているため、
-      一覧に本文も表示したい場合は style.css の .news-body { display:none; } を削除してください)。
-    -->
-    <div class="news-list reveal">
-
-      <article class="news-item" id="news-1" style="display:grid;">
-        <span class="news-date">2026.09.08</span>
-        <span class="news-tag">お知らせ</span>
-        <div>
-          <span class="news-title">鍼ノ木、公式サイトをオープンいたしました。</span>
-          <p class="news-body" style="display:block;">
-            この度、鍼灸院 鍼ノ木(はりのき)の公式サイトをオープンいたしました。
-            サロンのご紹介やメニュー、鍼灸師のプロフィールなどを随時更新してまいります。
-            今後ともどうぞよろしくお願いいたします。
-          </p>
-        </div>
-      </article>
-
-      <article class="news-item" id="news-2" style="display:grid;">
-        <span class="news-date">2026.09.01</span>
-        <span class="news-tag">コラム</span>
-        <div>
-          <span class="news-title">秋の養生 ― 巡りを整えて美しく過ごすヒント</span>
-          <p class="news-body" style="display:block;">
-            季節の変わり目は、気血の巡りが滞りやすく、冷えや乾燥、肌荒れが気になる時期です。
-            この時期は温かい飲み物を心がけ、首・お腹・足首の「三つの首」を冷やさないことが養生の基本。
-            鍼灸で巡りを整えながら、秋を心地よくお過ごしください。
-          </p>
-        </div>
-      </article>
-
-      <article class="news-item" id="news-3" style="display:grid;">
-        <span class="news-date">2026.08.20</span>
-        <span class="news-tag">お知らせ</span>
-        <div>
-          <span class="news-title">プレオープンのお知らせ</span>
-          <p class="news-body" style="display:block;">
-            鍼ノ木は、まもなくプレオープンを迎えます。詳しい日程やご予約方法については、
-            決まり次第こちらのページとSNSにてお知らせいたします。楽しみにお待ちください。
-          </p>
-        </div>
-      </article>
-
-    </div>
+    <!-- お知らせ一覧: 内容は js/news-data.js から自動生成されます(全件) -->
+    <div class="news-list reveal" id="newsFullList"></div>
 
     <div class="news-more reveal">
       <a href="index.html" class="btn btn-outline">トップページへ戻る</a>
@@ -158,11 +114,13 @@
 
     <div class="footer-bottom">
       <span>&copy; 2026 HARINOKI. All rights reserved.</span>
-      <span>鍼灸院 鍼ノ木</span>
+      <span>鍼ノ木</span>
     </div>
   </div>
 </footer>
 
+<script src="js/news-data.js"></script>
+<script src="js/news-render.js"></script>
 <script src="js/main.js"></script>
 <script src="js/constitution-quiz.js"></script>
 </body>
