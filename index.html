@@ -64,22 +64,49 @@
 
 <!-- ==================== Hero ==================== -->
 <section class="hero" id="home">
+  <!--
+    トップの写真ストリップ(左に流れる・枠なし):
+    4枚の写真と、ロゴ(1枚)が流れます。現在の .strip-photo.is-placeholder は、写真が入るまでの仮の表示です。
+    実際の写真は assets/photos/ などに置き、各 <div class="strip-photo is-placeholder ..."></div> を
+      <img class="strip-photo is-wide" src="assets/photos/xxx.jpg" alt="">
+    に差し替えてください(is-wide=横長 / is-square=正方形 / is-tall=縦長)。
+    ループ表示のため、同じ内容を2セット(後半は aria-hidden)並べています。差し替えは両方のセットで行ってください。
+  -->
+  <div class="photo-strip" aria-label="サロンの写真">
+    <div class="photo-strip-track">
+        <div class="strip-photo is-placeholder is-wide tone-1" role="img" aria-label="サロンの写真(準備中)"></div>
+        <div class="strip-photo is-placeholder is-square tone-2" role="img" aria-label="サロンの写真(準備中)"></div>
+        <div class="strip-logo">
+          <div class="strip-logo-mark"><img src="assets/symbol-transparent.png" alt="辻堂 鍼灸院 鍼ノ木"></div>
+          <div class="strip-logo-text">
+            <span class="strip-logo-en">HARINOKI</span>
+            <span class="strip-logo-jp">鍼 ノ 木</span>
+          </div>
+        </div>
+        <div class="strip-photo is-placeholder is-tall tone-3" role="img" aria-label="サロンの写真(準備中)"></div>
+        <div class="strip-photo is-placeholder is-wide tone-4" role="img" aria-label="サロンの写真(準備中)"></div>
+        <div class="strip-photo is-placeholder is-wide tone-1" aria-hidden="true"></div>
+        <div class="strip-photo is-placeholder is-square tone-2" aria-hidden="true"></div>
+        <div class="strip-logo" aria-hidden="true">
+          <div class="strip-logo-mark"><img src="assets/symbol-transparent.png" alt=""></div>
+          <div class="strip-logo-text">
+            <span class="strip-logo-en">HARINOKI</span>
+            <span class="strip-logo-jp">鍼 ノ 木</span>
+          </div>
+        </div>
+        <div class="strip-photo is-placeholder is-tall tone-3" aria-hidden="true"></div>
+        <div class="strip-photo is-placeholder is-wide tone-4" aria-hidden="true"></div>
+    </div>
+  </div>
+
   <div class="hero-inner">
     <h1>身体は巡り、美は深化する。</h1>
-    <div class="hero-logo-wrap">
-      <img src="assets/symbol-transparent.png" alt="辻堂 鍼灸院 鍼ノ木" class="hero-logo">
-    </div>
-    <div class="hero-brand-text">
-      <span class="hero-brand-en">HARINOKI</span>
-      <span class="hero-brand-jp">鍼 ノ 木</span>
-    </div>
     <p class="lead">
       鍼ノ木(はりのき)は、東洋医学の知恵と丁寧な施術で、気血の巡りを整え、
       心とからだ本来の美しさを引き出す鍼灸・整体・美容サロンです。
       カウンセリングからお悩みやありたい姿をお伺いし、鍼・灸・整体・マッサージをお客様に合わせて調合し施術いたします。
     </p>
   </div>
-  <span class="scroll-cue"></span>
 </section>
 
 <!-- ==================== Concerns ==================== -->
@@ -136,6 +163,7 @@
             <span>エラの張り</span>
             <span>ほうれい線</span>
             <span>眉間のシワ</span>
+            <span>ボトックス後の違和感</span>
           </div>
         </div>
         <div class="news-card concern-card">
