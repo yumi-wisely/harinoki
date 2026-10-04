@@ -72,7 +72,7 @@
       [false, true].forEach(function (isClone) {
         latest.forEach(function (n) {
           var a = el('a', 'news-ticker-item');
-          a.href = 'index.html#news-' + n.id;
+          a.href = '#news-' + n.id;
           if (isClone) {
             a.setAttribute('aria-hidden', 'true');
             a.tabIndex = -1;

@@ -29,6 +29,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+html { overflow-x: clip; }
 body { line-break: strict; word-break: auto-phrase; }
 h1, h2, h3, h4 { text-wrap: balance; }
 p, dd, li, figcaption { text-wrap: pretty; }
@@ -43,6 +44,7 @@ body {
   line-height: 1.9;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 img { max-width: 100%; display: block; }
@@ -812,6 +814,7 @@ section { position: relative; }
 
 .menu-groups {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 40px;
 }
 
@@ -824,8 +827,9 @@ section { position: relative; }
   padding-bottom: 12px;
   border-bottom: 1px solid var(--line);
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
-  gap: 12px;
+  gap: 2px 12px;
 }
 .menu-group-title span {
   font-family: var(--font-en);
@@ -874,8 +878,11 @@ section { position: relative; }
   border-radius: var(--radius);
   background: var(--white);
   box-shadow: var(--shadow-soft);
-  overflow: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
+
+.price-scroll-hint { display: none; }
 
 .price-table {
   width: 100%;
@@ -935,6 +942,15 @@ section { position: relative; }
   .price-table thead th,
   .price-table tbody td { padding: 12px 8px; font-size: 13px; }
   .price-table tbody td { font-size: 15px; }
+  .price-table { min-width: 520px; }
+  .price-scroll-hint {
+    display: block;
+    margin: 0 0 8px;
+    text-align: right;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+  }
 }
 
 .menu-note span { display: block; }
@@ -1322,7 +1338,7 @@ section { position: relative; }
   .footer-top { grid-template-columns: 1fr; gap: 36px; }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 1000px) {
   .main-nav { position: fixed; top: 0; right: 0; height: 100vh; width: min(78vw, 320px);
     background: var(--cream); box-shadow: -12px 0 40px -20px rgba(0,0,0,0.3);
     flex-direction: column; align-items: flex-start; justify-content: flex-start;
@@ -1335,7 +1351,9 @@ section { position: relative; }
   .nav-toggle.is-active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
   .nav-toggle.is-active span:nth-child(2) { opacity: 0; }
   .nav-toggle.is-active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+}
 
+@media (max-width: 720px) {
   .news-item, .news-full .news-item { grid-template-columns: 1fr; gap: 6px; padding: 20px 4px; }
 
   .access-info dl { grid-template-columns: 84px 1fr; }
