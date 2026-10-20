@@ -1321,7 +1321,8 @@ section { position: relative; }
 }
 
 .footer-id { flex: 0 0 240px; width: 240px; max-width: 100%; display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
-.footer-message { flex: 1 1 0; max-width: 540px; padding-left: 40px; border-left: 1px solid var(--line); }
+.footer-top { justify-content: flex-start; }
+.footer-message { flex: 0 1 540px; margin-left: clamp(16px, 4vw, 48px); text-align: left; }
 .footer-slogan {
   margin: 0 0 8px;
   font-family: var(--font-jp-serif);
@@ -1380,7 +1381,7 @@ section { position: relative; }
 @media (max-width: 960px) {
   .footer-top { flex-direction: column; justify-content: center; text-align: center; }
   .footer-id { flex: none; align-items: center; }
-  .footer-message { flex: none; width: 100%; max-width: 560px; padding-left: 0; border-left: none; }
+  .footer-message { flex: none; width: 100%; max-width: 560px; margin-left: 0; text-align: center; }
 }
 
 @media (max-width: 560px) {
