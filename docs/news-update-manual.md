@@ -131,7 +131,7 @@ window.NEWS_ITEMS = [
 
 保存してから**1〜2分ほど待って**、サイトを開きます。
 
-**https://harinoki.vercel.app/**
+**https://harino-ki.com/**
 
 - 画面上部の流れる帯と、トップの「お知らせ」に新しいお知らせが出ていればOKです
 - すぐに変わらないときは、ページを再読み込みしてください(パソコン:`Ctrl + R`、Macは `Command + R`)

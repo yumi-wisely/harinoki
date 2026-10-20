@@ -3,15 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google tag (gtag.js): 本番ドメイン(harino-ki.com)でのみ計測します -->
+<script>
+  if (location.hostname === 'harino-ki.com' || location.hostname === 'www.harino-ki.com') {
+    var gaTag = document.createElement('script');
+    gaTag.async = true;
+    gaTag.src = 'https://www.googletagmanager.com/gtag/js?id=G-6V3LR58EVZ';
+    document.head.appendChild(gaTag);
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', 'G-6V3LR58EVZ');
+  }
+</script>
 <title>鍼ノ木 HARINOKI | 鍼灸院・美容鍼灸サロン</title>
 <meta name="description" content="鍼ノ木(はりのき)は「身体は巡り、美は深化する」をスローガンに掲げる鍼灸・美容鍼灸サロンです。東洋医学の知恵で、心とからだ本来の美しさへ導きます。">
 
 <!-- Open Graph -->
 <meta property="og:title" content="鍼ノ木 HARINOKI | 鍼灸院・美容鍼灸サロン">
 <meta property="og:description" content="身体は巡り、美は深化する。鍼灸院 鍼ノ木の公式サイトです。">
-<meta property="og:image" content="assets/logo-transparent.png">
+<meta property="og:image" content="https://harino-ki.com/assets/logo-star.png">
+<meta property="og:url" content="https://harino-ki.com/">
 <meta property="og:type" content="website">
 
+<link rel="canonical" href="https://harino-ki.com/">
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/favicon-192.png">
 
@@ -28,22 +45,23 @@
 <header class="site-header" id="siteHeader">
   <div class="container">
     <a href="#home" class="brand">
-      <img src="assets/logo-transparent.png" alt="辻堂南口 美容鍼灸整体サロン 鍼ノ木 ロゴ">
+      <img src="assets/logo-star.png" alt="鍼ノ木 HARINOKI ロゴ">
       <span class="brand-text">
-        <span class="brand-sub">辻堂南口北口西口</span>
-        <span class="brand-main">鍼灸整体美容サロン</span>
+        <span class="brand-sub">辻堂南口すぐ</span>
+        <span class="brand-main"><span class="brand-dash" aria-hidden="true">-</span>鍼灸整体美容サロン - 鍼ノ木</span>
       </span>
     </a>
 
     <nav class="main-nav" id="mainNav">
       <ul>
         <li><a href="#concerns" class="nav-link">お悩み</a></li>
-        <li><a href="#salon" class="nav-link">サロン紹介</a></li>
-        <li><a href="#therapist" class="nav-link">鍼灸師紹介</a></li>
-        <li><a href="#menu" class="nav-link">メニュー</a></li>
-        <li><a href="#news" class="nav-link">お知らせ</a></li>
-        <li><a href="#access" class="nav-link">アクセス</a></li>
         <li><a href="#concept" class="nav-link">コンセプト</a></li>
+        <li><a href="#menu" class="nav-link">メニュー</a></li>
+        <li><a href="#therapist" class="nav-link">鍼灸師紹介</a></li>
+        <li><a href="#salon" class="nav-link">サロン紹介</a></li>
+        <li><a href="#access" class="nav-link">アクセス</a></li>
+        <li><a href="#news" class="nav-link">お知らせ</a></li>
+        <li><a href="#column" class="nav-link">コラム</a></li>
       </ul>
       <a href="#access" class="btn btn-primary">ご予約・お問い合わせ</a>
     </nav>
@@ -101,11 +119,7 @@
 
   <div class="hero-inner">
     <h1>身体は巡り、美は深化する。</h1>
-    <p class="lead">
-      鍼ノ木(はりのき)は、東洋医学の知恵と丁寧な施術で、気血の巡りを整え、
-      心とからだ本来の美しさを引き出す鍼灸・整体・美容サロンです。
-      カウンセリングからお悩みやありたい姿をお伺いし、鍼・灸・整体・マッサージをお客様に合わせて調合し施術いたします。
-    </p>
+    <p class="lead">東洋医学の知恵で、心と身体の本来の治癒力と美しさを引き出す鍼灸・整体・美容サロンです。</p>
   </div>
 </section>
 
@@ -117,75 +131,65 @@
       <h2 class="section-title">こんなお悩み・不調に、</h2>
     </div>
 
-    <div class="news-carousel reveal">
-      <div class="news-carousel-nav" hidden>
-        <button type="button" class="news-arrow" id="concernPrev" aria-label="前のカード">&larr;</button>
-        <button type="button" class="news-arrow" id="concernNext" aria-label="次のカード">&rarr;</button>
+    <div class="concern-list reveal">
+      <div class="concern-group">
+        <div class="concern-head">
+          <span class="concern-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3.5l1.8 5.5 3-11 2 5.5h3.2l1.5-2.8 1 2.8H21"/></svg></span>
+          <span class="concern-label">BODY</span>
+        </div>
+        <h3 class="concern-title">身体のお悩み</h3>
+        <ul class="concern-items">
+          <li>肩・首こり</li>
+          <li>背中・腰・股関節の痛みや張り</li>
+          <li>むくみ</li>
+          <li>冷え</li>
+        </ul>
       </div>
-      <div class="news-feed" id="concernList" role="region" aria-label="お悩み・不調" tabindex="0">
-        <div class="news-card concern-card">
-          <div class="news-card-head">
-            <span class="concern-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3.5l1.8 5.5 3-11 2 5.5h3.2l1.5-2.8 1 2.8H21"/></svg></span>
-            <span class="concern-label">BODY</span>
-          </div>
-          <h3 class="news-card-title">身体のお悩み</h3>
-          <div class="concern-tags">
-            <span>肩・首こり</span>
-            <span>背中・腰・股関節の痛みや張り</span>
-            <span>むくみ</span>
-            <span>冷え</span>
-          </div>
+      <div class="concern-group">
+        <div class="concern-head">
+          <span class="concern-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4 4 0 1 1 .8-7.9A5.5 5.5 0 0 1 18.5 11 3.5 3.5 0 0 1 18 18H7z"/></svg></span>
+          <span class="concern-label">FEELING</span>
         </div>
-        <div class="news-card concern-card">
-          <div class="news-card-head">
-            <span class="concern-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3.8a8.3 8.3 0 1 0 0 16.4A6.8 6.8 0 1 1 14 3.8Z"/></svg></span>
-            <span class="concern-label">WOMEN</span>
-          </div>
-          <h3 class="news-card-title">女性特有のお悩み</h3>
-          <div class="concern-tags">
-            <span>生理痛</span>
-            <span>PMS</span>
-            <span>更年期症状</span>
-            <span>不妊</span>
-            <span>妊娠中の不調</span>
-          </div>
+        <h3 class="concern-title">なんとなくの不調</h3>
+        <ul class="concern-items">
+          <li>だるい</li>
+          <li>眠れない</li>
+          <li>疲れが取れない</li>
+          <li>イライラ</li>
+          <li>ぼんやり</li>
+        </ul>
+      </div>
+      <div class="concern-group">
+        <div class="concern-head">
+          <span class="concern-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3.8a8.3 8.3 0 1 0 0 16.4A6.8 6.8 0 1 1 14 3.8Z"/></svg></span>
+          <span class="concern-label">WOMEN</span>
         </div>
-        <div class="news-card concern-card">
-          <div class="news-card-head">
-            <span class="concern-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="9" cy="10.2" r="0.9" fill="currentColor" stroke="none"/><circle cx="15" cy="10.2" r="0.9" fill="currentColor" stroke="none"/><path d="M8.5 15c1 1.2 2.2 1.8 3.5 1.8s2.5-.6 3.5-1.8"/></svg></span>
-            <span class="concern-label">FACE</span>
-          </div>
-          <h3 class="news-card-title">お顔のお悩み</h3>
-          <div class="concern-tags">
-            <span>眼精疲労</span>
-            <span>たるみ</span>
-            <span>くすみ</span>
-            <span>エラの張り</span>
-            <span>ほうれい線</span>
-            <span>眉間のシワ</span>
-            <span>ボトックス後の違和感</span>
-          </div>
+        <h3 class="concern-title">女性特有のお悩み</h3>
+        <ul class="concern-items">
+          <li>生理痛</li>
+          <li>PMS</li>
+          <li>更年期症状</li>
+          <li>不妊</li>
+          <li>妊娠中の不調</li>
+        </ul>
+      </div>
+      <div class="concern-group">
+        <div class="concern-head">
+          <span class="concern-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="9" cy="10.2" r="0.9" fill="currentColor" stroke="none"/><circle cx="15" cy="10.2" r="0.9" fill="currentColor" stroke="none"/><path d="M8.5 15c1 1.2 2.2 1.8 3.5 1.8s2.5-.6 3.5-1.8"/></svg></span>
+          <span class="concern-label">FACE</span>
         </div>
-        <div class="news-card concern-card">
-          <div class="news-card-head">
-            <span class="concern-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4 4 0 1 1 .8-7.9A5.5 5.5 0 0 1 18.5 11 3.5 3.5 0 0 1 18 18H7z"/></svg></span>
-            <span class="concern-label">FEELING</span>
-          </div>
-          <h3 class="news-card-title">なんとなくの不調</h3>
-          <div class="concern-tags">
-            <span>だるい</span>
-            <span>眠れない</span>
-            <span>疲れが取れない</span>
-            <span>イライラ</span>
-            <span>ぼんやり</span>
-          </div>
-        </div>
+        <h3 class="concern-title">お顔のお悩み</h3>
+        <ul class="concern-items">
+          <li>眼精疲労</li>
+          <li>たるみ</li>
+          <li>くすみ</li>
+          <li>エラの張り</li>
+          <li>ほうれい線</li>
+          <li>眉間のシワ</li>
+          <li>ボトックス後の違和感</li>
+        </ul>
       </div>
     </div>
-
-    <p class="concern-note reveal">
-      鍼ノ木では、お一人おひとりのお悩みや体質に合わせ、鍼・灸・整体を鍼灸整体師が調合しオーダーメイドの施術でアプローチします
-    </p>
 
     <div class="hero-actions concern-actions reveal">
       <a href="#access" class="btn btn-primary">ご予約はこちら</a>
@@ -194,93 +198,57 @@
   </div>
 </section>
 
-<!-- ==================== Salon ==================== -->
-<section class="salon" id="salon">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Salon</p>
-      <h2 class="section-title">サロン紹介</h2>
-      <p class="section-lead">
-        木の温もりと静けさに包まれた、日常から少し離れた特別な時間を過ごしていただける空間です。
-      </p>
+<!-- ==================== Concept ==================== -->
+<section class="concept" id="concept">
+  <div class="container concept-grid">
+    <div class="concept-copy reveal">
+      <p class="eyebrow">Concept</p>
+      <h2 class="concept-headline">
+        <span>日々の疲れをとりお身体の不調を和らげたい方、</span>
+        <span>もっと健やかに美しく輝きたい方へ。</span>
+      </h2>
+      <p>鍼ノ木（はりのき）は、東洋医学に基づき、気・血・水の巡りを整えることで、身体が本来持つ自己治癒力を呼び覚ますサロンです。</p>
+      <p>外側からのケアだけでは届かない身体の深部へ働きかけ、内側から美しさが溢れ出す健やかなお身体へと導きます。</p>
+      <p>毎日を忙しく過ごす皆さまに寄り添い、時を重ねるほどに深まりゆく健康と美しさをお手伝いいたします。</p>
     </div>
 
-    <!--
-      サロンの写真(カード型・横スクロール):
-      現在の .salon-photo.is-placeholder の3枚は、写真が入るまでの仮の表示です。
-      実際の写真は assets/photos/ などに置き、各カードの
-        <div class="salon-photo is-placeholder" ...> ... </div>
-      を、次の1行に差し替えてください。
-        <img class="salon-photo" src="assets/photos/xxx.jpg" alt="施術ルーム">
-      下の一言(.salon-caption)の文章も、自由に書き換えられます。
-    -->
-    <div class="news-carousel reveal">
-      <div class="news-carousel-nav" hidden>
-        <button type="button" class="news-arrow" id="salonPrev" aria-label="前の写真">&larr;</button>
-        <button type="button" class="news-arrow" id="salonNext" aria-label="次の写真">&rarr;</button>
-      </div>
-      <div class="news-feed" id="salonList" role="region" aria-label="サロンの写真" tabindex="0">
-        <figure class="news-card salon-card">
-          <div class="salon-photo is-placeholder" role="img" aria-label="施術ルーム(写真準備中)">
-            <svg class="tile-icon" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#1c5956" stroke-width="1"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg>
-          </div>
-          <figcaption class="salon-caption">完全個室の施術ルームで、周りを気にせずゆったりと。</figcaption>
-        </figure>
-        <figure class="news-card salon-card">
-          <div class="salon-photo is-placeholder" role="img" aria-label="待合スペース(写真準備中)">
-            <svg class="tile-icon" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#1c5956" stroke-width="1"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg>
-          </div>
-          <figcaption class="salon-caption">木の香りと柔らかな光に包まれた、くつろぎの待合スペース。</figcaption>
-        </figure>
-        <figure class="news-card salon-card">
-          <div class="salon-photo is-placeholder" role="img" aria-label="受付・待合室(写真準備中)">
-            <svg class="tile-icon" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#1c5956" stroke-width="1"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg>
-          </div>
-          <figcaption class="salon-caption">初めての方も安心の、落ち着いた受付・待合室です。</figcaption>
-        </figure>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== Therapist ==================== -->
-<section class="therapist" id="therapist">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Therapist</p>
-      <h2 class="section-title">鍼灸師紹介</h2>
-      <p class="section-lead">
-        国家資格を持つ鍼灸師が、お一人おひとりの体質やお悩みに寄り添い、施術を行います。
-      </p>
-    </div>
-
-    <!--
-      鍼灸師プロフィール:
-      お名前・経歴・資格・写真は仮の内容です。実際の情報に差し替えてください。
-      複数名紹介する場合は、この .therapist-card ブロックごと複製してご利用いただけます。
-    -->
-    <div class="therapist-card reveal">
-      <div class="therapist-photo">
-        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
-      </div>
-      <div class="therapist-detail">
-        <span class="therapist-role">院長</span>
-        <h3 class="therapist-name">◯◯ ◯◯</h3>
-        <p class="therapist-name-en">鍼灸師</p>
-        <div class="therapist-bio">
-          <p>
-            鍼灸師として◯年、美容鍼灸・婦人科系のお悩みを中心に、のべ◯◯◯◯名以上の施術を担当。
-            「一人ひとりの体質に合わせたオーダーメイドの施術」をモットーに、
-            東洋医学の知見と丁寧なカウンセリングで、お客様のからだの声に耳を傾けています。
-          </p>
+    <ol class="concept-points">
+      <li class="concept-point reveal">
+        <span class="concept-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="10" r="5"/><circle cx="15" cy="10" r="5"/><circle cx="12" cy="15" r="5"/></svg><span class="concept-badge" aria-hidden="true">1</span></span>
+        <div>
+          <h3>オーダーメイド調合</h3>
+          <p>お一人おひとりのお悩みや「なりたい姿」を丁寧にお伺いし、鍼・灸・整体・マッサージをその日の体質や状態に合わせて最適に調合した、完全オーダーメイドの施術をお届けします。</p>
         </div>
-        <ul class="therapist-creds">
-          <li>はり師・きゅう師 国家資格保有</li>
-          <li>◯◯鍼灸専門学校 卒業</li>
-          <li>美容鍼灸 認定コース修了</li>
-        </ul>
-      </div>
-    </div>
+      </li>
+      <li class="concept-point reveal">
+        <span class="concept-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19L18.5 5.5"/><path d="M14 6l4 4"/><path d="M15.8 4.2l4 4"/><circle cx="19.6" cy="4.4" r="0.9" fill="currentColor" stroke="none"/></svg><span class="concept-badge" aria-hidden="true">2</span></span>
+        <div>
+          <h3>鍼（ハリ）</h3>
+          <p>髪の毛ほどの極細鍼を使用し、手技では届かない身体の深部（筋肉やツボ）へ直接アプローチ。緊張を和らげ、コリや痛みの根本原因を解消します。</p>
+        </div>
+      </li>
+      <li class="concept-point reveal">
+        <span class="concept-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 3 4 4.5 4 8.5a4 4 0 0 1-8 0c0-1.5.6-2.6 1.4-3.6.3 1 .9 1.6 1.6 2C11 8 11 5.5 12 3z"/><path d="M8.5 20h7"/></svg><span class="concept-badge" aria-hidden="true">3</span></span>
+        <div>
+          <h3>灸（キュウ）</h3>
+          <p>心地よい温熱刺激で血行を促し、身体を芯から温めます。自律神経の乱れを整えるとともに冷えやむくみを改善し、深いリラックス効果をもたらします。また、下腹部や足のツボを温めることで、女性特有の生理痛、PMS、更年期、妊活、逆子のケアなどへもアプローチします。</p>
+        </div>
+      </li>
+      <li class="concept-point reveal">
+        <span class="concept-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="10.00" y="2.6" width="4.6" height="2.6" rx="1" fill="currentColor" stroke="none"/><rect x="8.60" y="6.7" width="5.4" height="2.6" rx="1" fill="currentColor" stroke="none"/><rect x="7.80" y="10.8" width="6.2" height="2.6" rx="1" fill="currentColor" stroke="none"/><rect x="7.90" y="14.9" width="7.0" height="2.6" rx="1" fill="currentColor" stroke="none"/><rect x="8.50" y="19.0" width="7.8" height="2.6" rx="1" fill="currentColor" stroke="none"/><path d="M14.60 3.90h1.9" stroke-width="1.1"/><path d="M14.00 8.00h1.9" stroke-width="1.1"/><path d="M14.00 12.10h1.9" stroke-width="1.1"/><path d="M14.90 16.20h1.9" stroke-width="1.1"/><path d="M16.30 20.30h1.9" stroke-width="1.1"/></svg><span class="concept-badge" aria-hidden="true">4</span></span>
+        <div>
+          <h3>整体・マッサージ</h3>
+          <p>骨格や筋肉の歪みをやさしく整え、正しい姿勢と身体のバランスを取り戻します。関節の可動域を広げ、疲れや緊張が溜まりにくい柔軟なお身体へ導きます。</p>
+        </div>
+      </li>
+      <li class="concept-point reveal">
+        <span class="concept-icon"><svg width="26" height="26" viewBox="0 5.6 23.4 16.6" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.2 18.8 L23.1 16.8 L20.8 15.6 L22.0 12.8 L19.4 12.7 L19.5 9.6 L17.1 10.7 L16.2 7.6 L14.2 9.8 L12.5 7.3 L11.3 10.2 L9.0 8.5 L8.7 11.7 L6.2 11.3 L6.9 14.3 C5.8 14.8 4 16 2.9 17.4 C3.3 18.4 4.4 18.8 5.8 18.8 H21.2z" stroke-linejoin="round"/><path d="M8.6 18.8v2M16.6 18.8v2"/><path d="M3.7 16.3L1.2 14.9M3.5 17.4L0.9 17.5"/><circle cx="6.4" cy="16.5" r="1" fill="currentColor" stroke="none"/><circle cx="2.9" cy="17.4" r="1.05" fill="currentColor" stroke="none"/></svg><span class="concept-badge" aria-hidden="true">5</span></span>
+        <div>
+          <h3>美容鍼（びようばり）</h3>
+          <p>スマホやデスクワークによる眼精疲労、食いしばりなどの現代特有のコリを解消。肌の創傷治癒力を引き出すことでコラーゲンやエラスチンの生成を促し、血流改善によるトーンアップとターンオーバーの正常化で、内側から健やかな素肌へと導きます。</p>
+        </div>
+      </li>
+    </ol>
   </div>
 </section>
 
@@ -372,46 +340,91 @@
   </div><!-- /.container -->
 </section><!-- /.menu -->
 
-<!-- ==================== News ==================== -->
-<section class="news" id="news">
+<!-- ==================== Therapist ==================== -->
+<section class="therapist" id="therapist">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">News</p>
-      <h2 class="section-title">お知らせ</h2>
-      <p class="section-lead">営業日のご案内など、サロンからのお知らせです。</p>
+      <p class="eyebrow">Therapist</p>
+      <h2 class="section-title">鍼灸師紹介</h2>
+      <p class="section-lead">
+        国家資格を持つ鍼灸師が、お一人おひとりの体質やお悩みに寄り添い、施術を行います。
+      </p>
     </div>
 
-    <!-- お知らせ: 内容は js/news-data.js から自動生成されます(最新3件を全文表示・横スクロール) -->
+    <!--
+      鍼灸師プロフィール:
+      お名前・経歴・資格・写真は仮の内容です。実際の情報に差し替えてください。
+      複数名紹介する場合は、この .therapist-card ブロックごと複製してご利用いただけます。
+    -->
+    <div class="therapist-card reveal">
+      <div class="therapist-photo">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+      </div>
+      <div class="therapist-detail">
+        <span class="therapist-role">院長</span>
+        <h3 class="therapist-name">◯◯ ◯◯</h3>
+        <p class="therapist-name-en">鍼灸師</p>
+        <div class="therapist-bio">
+          <p>
+            鍼灸師として◯年、美容鍼灸・婦人科系のお悩みを中心に、のべ◯◯◯◯名以上の施術を担当。
+            「一人ひとりの体質に合わせたオーダーメイドの施術」をモットーに、
+            東洋医学の知見と丁寧なカウンセリングで、お客様のからだの声に耳を傾けています。
+          </p>
+        </div>
+        <ul class="therapist-creds">
+          <li>はり師・きゅう師 国家資格保有</li>
+          <li>◯◯鍼灸専門学校 卒業</li>
+          <li>美容鍼灸 認定コース修了</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== Salon ==================== -->
+<section class="salon" id="salon">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Salon</p>
+      <h2 class="section-title">サロン紹介</h2>
+      <p class="section-lead">
+        木の温もりと静けさに包まれた、日常から少し離れた特別な時間を過ごしていただける空間です。
+      </p>
+    </div>
+
+    <!--
+      サロンの写真(カード型・横スクロール):
+      現在の .salon-photo.is-placeholder の3枚は、写真が入るまでの仮の表示です。
+      実際の写真は assets/photos/ などに置き、各カードの
+        <div class="salon-photo is-placeholder" ...> ... </div>
+      を、次の1行に差し替えてください。
+        <img class="salon-photo" src="assets/photos/xxx.jpg" alt="施術ルーム">
+      下の一言(.salon-caption)の文章も、自由に書き換えられます。
+    -->
     <div class="news-carousel reveal">
-      <div class="news-carousel-nav">
-        <button type="button" class="news-arrow" id="newsPrev" aria-label="前のお知らせ">&larr;</button>
-        <button type="button" class="news-arrow" id="newsNext" aria-label="次のお知らせ">&rarr;</button>
+      <div class="news-carousel-nav" hidden>
+        <button type="button" class="news-arrow" id="salonPrev" aria-label="前の写真">&larr;</button>
+        <button type="button" class="news-arrow" id="salonNext" aria-label="次の写真">&rarr;</button>
       </div>
-      <div class="news-feed" id="newsList" role="region" aria-label="お知らせ" tabindex="0"></div>
-    </div>
-
-    <div class="news-more reveal">
-      <a href="news.html" class="btn btn-outline">過去のお知らせを見る</a>
-    </div>
-
-    <!-- コラム・ブログ: note の記事を /api/note 経由で自動表示します -->
-    <div class="note-block reveal">
-      <div class="note-head">
-        <p class="eyebrow">Column</p>
-        <h3 class="note-title">コラム・ブログ</h3>
-        <p class="note-lead">養生のヒントやサロンの日々を、noteで発信しています。</p>
-      </div>
-      <div class="news-carousel">
-        <div class="news-carousel-nav" hidden>
-          <button type="button" class="news-arrow" id="notePrev" aria-label="前の記事">&larr;</button>
-          <button type="button" class="news-arrow" id="noteNext" aria-label="次の記事">&rarr;</button>
-        </div>
-        <div class="news-feed" id="noteGrid" role="region" aria-label="note記事" tabindex="0" aria-live="polite">
-          <p class="note-status">記事を読み込んでいます…</p>
-        </div>
-      </div>
-      <div class="news-more">
-        <a href="https://note.com/harinoki" class="btn btn-outline" target="_blank" rel="noopener">noteで記事をもっと読む</a>
+      <div class="news-feed" id="salonList" role="region" aria-label="サロンの写真" tabindex="0">
+        <figure class="news-card salon-card">
+          <div class="salon-photo is-placeholder" role="img" aria-label="施術ルーム(写真準備中)">
+            <svg class="tile-icon" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#1c5956" stroke-width="1"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg>
+          </div>
+          <figcaption class="salon-caption">完全個室の施術ルームで、周りを気にせずゆったりと。</figcaption>
+        </figure>
+        <figure class="news-card salon-card">
+          <div class="salon-photo is-placeholder" role="img" aria-label="待合スペース(写真準備中)">
+            <svg class="tile-icon" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#1c5956" stroke-width="1"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg>
+          </div>
+          <figcaption class="salon-caption">木の香りと柔らかな光に包まれた、くつろぎの待合スペース。</figcaption>
+        </figure>
+        <figure class="news-card salon-card">
+          <div class="salon-photo is-placeholder" role="img" aria-label="受付・待合室(写真準備中)">
+            <svg class="tile-icon" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#1c5956" stroke-width="1"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg>
+          </div>
+          <figcaption class="salon-caption">初めての方も安心の、落ち着いた受付・待合室です。</figcaption>
+        </figure>
       </div>
     </div>
   </div>
@@ -466,46 +479,52 @@
   </div>
 </section>
 
-<!-- ==================== Concept ==================== -->
-<section class="concept" id="concept">
-  <div class="container concept-grid">
-    <div class="concept-copy reveal">
-      <p class="eyebrow">Concept</p>
-      <h2 class="section-title">美と健康、ふたつでひとつ。</h2>
-      <p class="slogan">「身体は巡り、美は深化する」</p>
-      <p>
-        鍼ノ木という名前には、一本の鍼のように芯を持ちながら、静かに根を張るヒノキの木のように、
-        揺るがない美しさを育てていきたいという想いを込めています。
-      </p>
-      <p>
-        体調を整えることは、日々の美しさを育てること。鍼灸の力で気・血・水の巡りを促し、
-        外側からのケアだけでは届かない、内側から満ちていく健やかな美しさへ。
-        鍼ノ木は、お一人おひとりの体質やお悩みに寄り添いながら、深化していく美と健康のお手伝いをいたします。
-      </p>
+<!-- ==================== News ==================== -->
+<section class="news" id="news">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">News</p>
+      <h2 class="section-title">お知らせ</h2>
+      <p class="section-lead">営業日のご案内など、サロンからのお知らせです。</p>
     </div>
 
-    <div class="pillars">
-      <div class="pillar reveal reveal-delay-1">
-        <span class="pillar-num">01</span>
-        <div>
-          <h3>巡り ― Circulation</h3>
-          <p>鍼灸で気血の流れを整え、冷えやむくみ、こりのない、めぐりの良いからだへ。</p>
-        </div>
+    <!-- お知らせ: 内容は js/news-data.js から自動生成されます(最新3件を全文表示・横スクロール) -->
+    <div class="news-carousel reveal">
+      <div class="news-carousel-nav">
+        <button type="button" class="news-arrow" id="newsPrev" aria-label="前のお知らせ">&larr;</button>
+        <button type="button" class="news-arrow" id="newsNext" aria-label="次のお知らせ">&rarr;</button>
       </div>
-      <div class="pillar reveal reveal-delay-2">
-        <span class="pillar-num">02</span>
-        <div>
-          <h3>癒し ― Healing</h3>
-          <p>静かで落ち着いた空間の中、心とからだをゆるめる特別なひとときをお届けします。</p>
-        </div>
+      <div class="news-feed" id="newsList" role="region" aria-label="お知らせ" tabindex="0"></div>
+    </div>
+
+    <div class="news-more reveal">
+      <a href="news.html" class="btn btn-outline">過去のお知らせを見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== Column (note) ==================== -->
+<section class="column" id="column">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Column</p>
+      <h2 class="section-title">コラム・ブログ</h2>
+      <p class="section-lead">養生のヒントやサロンの日々を、noteで発信しています。</p>
+    </div>
+
+    <!-- note の記事を /api/note 経由で自動表示します(横スクロール) -->
+    <div class="news-carousel reveal">
+      <div class="news-carousel-nav" hidden>
+        <button type="button" class="news-arrow" id="notePrev" aria-label="前の記事">&larr;</button>
+        <button type="button" class="news-arrow" id="noteNext" aria-label="次の記事">&rarr;</button>
       </div>
-      <div class="pillar reveal reveal-delay-3">
-        <span class="pillar-num">03</span>
-        <div>
-          <h3>深化 ― Refinement</h3>
-          <p>一度きりのケアで終わらない、通うほどに深まる美しさと健やかさを育てます。</p>
-        </div>
+      <div class="news-feed" id="noteGrid" role="region" aria-label="note記事" tabindex="0" aria-live="polite">
+        <p class="note-status">記事を読み込んでいます…</p>
       </div>
+    </div>
+
+    <div class="news-more reveal">
+      <a href="https://note.com/harinoki" class="btn btn-outline" target="_blank" rel="noopener">noteで記事をもっと読む</a>
     </div>
   </div>
 </section>
@@ -514,48 +533,41 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-top">
-      <div>
+      <div class="footer-id">
         <div class="footer-brand">
-          <img src="assets/logo-transparent.png" alt="鍼ノ木 HARINOKI">
-          <span class="footer-brand-text">HARINOKI</span>
+          <img src="assets/logo-wide.png" alt="鍼ノ木 HARINOKI 鍼灸整体美容サロン">
         </div>
-        <p class="footer-desc">
-          身体は巡り、美は深化する。東洋医学の知恵で、心とからだ本来の美しさを引き出す鍼灸・美容鍼灸サロンです。
-        </p>
         <div class="footer-social">
-          <a href="#" aria-label="Instagram">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-          </a>
-          <a href="#" aria-label="LINE">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5c0-4.4-4.5-8-10-8S1 7.1 1 11.5c0 3.9 3.5 7.2 8.3 7.9.3.1.8.3.9.6.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6 1.1-.5 5.9-3.5 8-6 1.3-1.5 2-3 2-4.9z"/></svg>
-          </a>
+          <a href="#" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="https://note.com/harinoki" aria-label="note" target="_blank" rel="noopener"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><path d="M8.5 16.5v-6c0-1 .8-1.7 1.8-1.7h2.2c1.8 0 3 1.1 3 2.9v4.8"/></svg></a>
+          <a href="#" aria-label="LINE"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M21 11.5c0-4.4-4.5-8-10-8S1 7.1 1 11.5c0 3.9 3.5 7.2 8.3 7.9.3.1.8.3.9.6.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6 1.1-.5 5.9-3.5 8-6 1.3-1.5 2-3 2-4.9z"/><text x="11" y="13.9" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="6.4" font-weight="700" letter-spacing="0.2" fill="currentColor" stroke="none">LINE</text></svg></a>
         </div>
       </div>
-
-      <div class="footer-col">
-        <h4>Menu</h4>
-        <ul>
-          <li><a href="#concept">コンセプト</a></li>
-          <li><a href="#salon">サロン紹介</a></li>
-          <li><a href="#therapist">鍼灸師紹介</a></li>
-          <li><a href="#menu">メニュー</a></li>
-          <li><a href="#news">お知らせ</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Information</h4>
-        <ul>
-          <li><a href="#access">アクセス</a></li>
-          <li><a href="tel:0000000000">000-0000-0000</a></li>
-          <li><a href="#">プライバシーポリシー</a></li>
-        </ul>
+      <div class="footer-message">
+        <p class="footer-slogan">「身体は巡り、美は深化する」</p>
+        <p class="footer-lead">鍼ノ木という名前には、一本の鍼のように芯を持ちながら、静かに根を張るヒノキの木のように、揺るがない美しさを育てていきたいという想いを込めています。</p>
       </div>
     </div>
 
+    <nav class="footer-nav" aria-label="フッターメニュー">
+      <ul>
+        <li><a href="#concerns">お悩み</a></li>
+        <li><a href="#concept">コンセプト</a></li>
+        <li><a href="#menu">メニュー</a></li>
+        <li><a href="#therapist">鍼灸師紹介</a></li>
+        <li><a href="#salon">サロン紹介</a></li>
+        <li><a href="#access">アクセス</a></li>
+        <li><a href="#news">お知らせ</a></li>
+        <li><a href="#column">コラム</a></li>
+      </ul>
+    </nav>
+
     <div class="footer-bottom">
       <span>&copy; 2026 HARINOKI. All rights reserved.</span>
-      <span>鍼ノ木</span>
+      <span class="footer-bottom-links">
+        <a href="/privacy">プライバシーポリシー</a>
+        <span>鍼ノ木</span>
+      </span>
     </div>
   </div>
 </footer>
