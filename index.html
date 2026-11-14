@@ -24,17 +24,96 @@
 <!-- Open Graph -->
 <meta property="og:title" content="鍼ノ木 HARINOKI | 鍼灸院・美容鍼灸サロン">
 <meta property="og:description" content="身体は巡り、美は深化する。鍼灸院 鍼ノ木の公式サイトです。">
-<meta property="og:image" content="https://harino-ki.com/assets/logo-star.png">
+<meta property="og:image" content="https://harino-ki.com/assets/logo-og.png">
 <meta property="og:url" content="https://harino-ki.com/">
 <meta property="og:type" content="website">
 
 <link rel="canonical" href="https://harino-ki.com/">
+
+<!-- 構造化データ(LocalBusiness): 検索結果に店舗情報を伝えるためのものです。
+     電話番号は、実際の番号が決まったら "telephone": "+81-XX-XXXX-XXXX" の形で追記してください。
+     Instagram の公式アカウントができたら、sameAs にURLを追加してください。
+     営業時間の「不定休」はこの形式では表せないため、毎日 10:00〜20:00 として記載しています。
+     位置情報は、プラスコード 8CPW+HF(藤沢市)の中心の座標です。 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  "@id": "https://harino-ki.com/#business",
+  "name": "鍼ノ木",
+  "alternateName": [
+    "はりのき",
+    "HARINOKI"
+  ],
+  "description": "鍼ノ木(はりのき)は、辻堂駅南口から徒歩1分の鍼灸・整体・美容鍼灸サロンです。東洋医学の知恵で、心と身体の本来の治癒力と美しさを引き出します。",
+  "url": "https://harino-ki.com/",
+  "logo": "https://harino-ki.com/assets/logo-main.png",
+  "image": [
+    "https://harino-ki.com/assets/logo-og.png",
+    "https://harino-ki.com/assets/photos/strip-smile.jpg",
+    "https://harino-ki.com/assets/photos/strip-closeup.jpg"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "postalCode": "251-0047",
+    "addressCountry": "JP",
+    "addressRegion": "神奈川県",
+    "addressLocality": "藤沢市",
+    "streetAddress": "辻堂2丁目7-16 SHONAN SAKURAI Bldg.10F"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 35.3364375,
+    "longitude": 139.4461875
+  },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=35.3364375,139.4461875",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "10:00",
+      "closes": "20:00"
+    }
+  ],
+  "priceRange": "¥9,500〜¥15,000",
+  "areaServed": {
+    "@type": "City",
+    "name": "藤沢市"
+  },
+  "sameAs": [
+    "https://lin.ee/xS7wNyR",
+    "https://note.com/harinoki"
+  ],
+  "potentialAction": {
+    "@type": "ReserveAction",
+    "name": "Webで予約",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://salona.jp/book/harino-ki",
+      "actionPlatform": [
+        "http://schema.org/DesktopWebPlatform",
+        "http://schema.org/MobileWebPlatform"
+      ]
+    },
+    "result": {
+      "@type": "Reservation",
+      "name": "鍼ノ木 Web予約"
+    }
+  }
+}
+</script>
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/favicon-192.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Shippori+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/CorporateMincho-ver3.woff2" as="font" type="font/woff2" crossorigin>
 
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/quiz.css">
@@ -45,7 +124,7 @@
 <header class="site-header" id="siteHeader">
   <div class="container">
     <a href="#home" class="brand">
-      <img src="assets/logo-star.png" alt="鍼ノ木 HARINOKI ロゴ">
+      <img src="assets/logo-main.png" alt="鍼ノ木 HARINOKI ロゴ">
       <span class="brand-text">
         <span class="brand-sub">辻堂南口すぐ</span>
         <span class="brand-main"><span class="brand-dash" aria-hidden="true">-</span>鍼灸整体美容サロン - 鍼ノ木</span>
@@ -84,36 +163,35 @@
 <section class="hero" id="home">
   <!--
     トップの写真ストリップ(左に流れる・枠なし):
-    4枚の写真と、ロゴ(1枚)が流れます。現在の .strip-photo.is-placeholder は、写真が入るまでの仮の表示です。
-    実際の写真は assets/photos/ などに置き、各 <div class="strip-photo is-placeholder ..."></div> を
-      <img class="strip-photo is-wide" src="assets/photos/xxx.jpg" alt="">
-    に差し替えてください(is-wide=横長 / is-square=正方形 / is-tall=縦長)。
+    8枚の写真と、ロゴ(1枚)が流れます。写真は assets/photos/strip-○○.jpg(温もりのある色合いに補正済み)です。
+    差し替えるときは、各 <img class="strip-photo is-wide" src="..."> のファイル名を変えてください
+    (is-wide=横長 / is-square=正方形 / is-tall=縦長)。
     ループ表示のため、同じ内容を2セット(後半は aria-hidden)並べています。差し替えは両方のセットで行ってください。
   -->
   <div class="photo-strip" aria-label="サロンの写真">
     <div class="photo-strip-track">
-        <div class="strip-photo is-placeholder is-wide tone-1" role="img" aria-label="サロンの写真(準備中)"></div>
-        <div class="strip-photo is-placeholder is-square tone-2" role="img" aria-label="サロンの写真(準備中)"></div>
+        <img class="strip-photo is-wide" src="assets/photos/strip-smile.jpg" alt="カウンセリングで笑顔で話しかける鍼灸師">
+        <img class="strip-photo is-tall" src="assets/photos/strip-tools.jpg" alt="お灸と鍼を並べたトレー">
         <div class="strip-logo">
-          <div class="strip-logo-mark"><img src="assets/symbol-transparent.png" alt="辻堂 鍼灸院 鍼ノ木"></div>
-          <div class="strip-logo-text">
-            <span class="strip-logo-en">HARINOKI</span>
-            <span class="strip-logo-jp">鍼 ノ 木</span>
-          </div>
+          <div class="strip-logo-mark"><img src="assets/logo-main.png" alt="鍼ノ木 HARINOKI"></div>
         </div>
-        <div class="strip-photo is-placeholder is-tall tone-3" role="img" aria-label="サロンの写真(準備中)"></div>
-        <div class="strip-photo is-placeholder is-wide tone-4" role="img" aria-label="サロンの写真(準備中)"></div>
-        <div class="strip-photo is-placeholder is-wide tone-1" aria-hidden="true"></div>
-        <div class="strip-photo is-placeholder is-square tone-2" aria-hidden="true"></div>
+        <img class="strip-photo is-wide" src="assets/photos/strip-moxa.jpg" alt="背中にすえたお灸から立ちのぼる煙">
+        <img class="strip-photo is-square" src="assets/photos/strip-head.jpg" alt="頭への鍼の施術">
+        <img class="strip-photo is-square" src="assets/photos/strip-closeup.jpg" alt="美容鍼灸の施術を受ける女性">
+        <img class="strip-photo is-wide" src="assets/photos/strip-stretch.jpg" alt="整体で脚をのばす施術">
+        <img class="strip-photo is-square" src="assets/photos/strip-needle.jpg" alt="肩への鍼の施術">
+        <img class="strip-photo is-wide" src="assets/photos/strip-counsel.jpg" alt="施術前のカウンセリング">
+        <img class="strip-photo is-wide" src="assets/photos/strip-smile.jpg" alt="" aria-hidden="true" loading="lazy">
+        <img class="strip-photo is-tall" src="assets/photos/strip-tools.jpg" alt="" aria-hidden="true" loading="lazy">
         <div class="strip-logo" aria-hidden="true">
-          <div class="strip-logo-mark"><img src="assets/symbol-transparent.png" alt=""></div>
-          <div class="strip-logo-text">
-            <span class="strip-logo-en">HARINOKI</span>
-            <span class="strip-logo-jp">鍼 ノ 木</span>
-          </div>
+          <div class="strip-logo-mark"><img src="assets/logo-main.png" alt=""></div>
         </div>
-        <div class="strip-photo is-placeholder is-tall tone-3" aria-hidden="true"></div>
-        <div class="strip-photo is-placeholder is-wide tone-4" aria-hidden="true"></div>
+        <img class="strip-photo is-wide" src="assets/photos/strip-moxa.jpg" alt="" aria-hidden="true" loading="lazy">
+        <img class="strip-photo is-square" src="assets/photos/strip-head.jpg" alt="" aria-hidden="true" loading="lazy">
+        <img class="strip-photo is-square" src="assets/photos/strip-closeup.jpg" alt="" aria-hidden="true" loading="lazy">
+        <img class="strip-photo is-wide" src="assets/photos/strip-stretch.jpg" alt="" aria-hidden="true" loading="lazy">
+        <img class="strip-photo is-square" src="assets/photos/strip-needle.jpg" alt="" aria-hidden="true" loading="lazy">
+        <img class="strip-photo is-wide" src="assets/photos/strip-counsel.jpg" alt="" aria-hidden="true" loading="lazy">
     </div>
   </div>
 
@@ -242,7 +320,7 @@
         </div>
       </li>
       <li class="concept-point reveal">
-        <span class="concept-icon"><svg width="26" height="26" viewBox="0 5.6 23.4 16.6" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.2 18.8 L23.1 16.8 L20.8 15.6 L22.0 12.8 L19.4 12.7 L19.5 9.6 L17.1 10.7 L16.2 7.6 L14.2 9.8 L12.5 7.3 L11.3 10.2 L9.0 8.5 L8.7 11.7 L6.2 11.3 L6.9 14.3 C5.8 14.8 4 16 2.9 17.4 C3.3 18.4 4.4 18.8 5.8 18.8 H21.2z" stroke-linejoin="round"/><path d="M8.6 18.8v2M16.6 18.8v2"/><path d="M3.7 16.3L1.2 14.9M3.5 17.4L0.9 17.5"/><circle cx="6.4" cy="16.5" r="1" fill="currentColor" stroke="none"/><circle cx="2.9" cy="17.4" r="1.05" fill="currentColor" stroke="none"/></svg><span class="concept-badge" aria-hidden="true">5</span></span>
+        <span class="concept-icon"><svg width="26" height="26" viewBox="-0.5 5.6 24.6 16.6" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.2 18.8 L23.1 16.8 L20.8 15.6 L22.0 12.8 L19.4 12.7 L19.5 9.6 L17.1 10.7 L16.2 7.6 L14.2 9.8 L12.5 7.3 L11.3 10.2 L9.0 8.5 L8.7 11.7 L6.2 11.3 L6.9 14.3 C5.8 14.8 4 16 2.9 17.4 C3.3 18.4 4.4 18.8 5.8 18.8 H21.2z" stroke-linejoin="round"/><path d="M8.6 18.8v2M16.6 18.8v2"/><path d="M3.7 16.3L1.2 14.9M3.5 17.4L0.9 17.5"/><circle cx="6.4" cy="16.5" r="1" fill="currentColor" stroke="none"/><circle cx="2.9" cy="17.4" r="1.05" fill="currentColor" stroke="none"/></svg><span class="concept-badge" aria-hidden="true">5</span></span>
         <div>
           <h3>美容鍼（びようばり）</h3>
           <p>スマホやデスクワークによる眼精疲労、食いしばりなどの現代特有のコリを解消。肌の創傷治癒力を引き出すことでコラーゲンやエラスチンの生成を促し、血流改善によるトーンアップとターンオーバーの正常化で、内側から健やかな素肌へと導きます。</p>
@@ -353,32 +431,27 @@
 
     <!--
       鍼灸師プロフィール:
-      お名前・経歴・資格・写真は仮の内容です。実際の情報に差し替えてください。
       複数名紹介する場合は、この .therapist-card ブロックごと複製してご利用いただけます。
     -->
     <div class="therapist-card reveal">
       <div class="therapist-photo">
-        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+        <img src="assets/photos/therapist.jpg" alt="鍼灸師 大城えみ" loading="lazy">
       </div>
       <div class="therapist-detail">
         <span class="therapist-role">院長</span>
-        <h3 class="therapist-name">◯◯ ◯◯</h3>
-        <p class="therapist-name-en">鍼灸師</p>
+        <h3 class="therapist-name">大城 えみ</h3>
+        <ul class="therapist-creds">
+          <li>はり師　きゅう師</li>
+          <li>あん摩マッサージ指圧師</li>
+        </ul>
         <div class="therapist-bio">
           <p>
-            鍼灸師として◯年、美容鍼灸・婦人科系のお悩みを中心に、のべ◯◯◯◯名以上の施術を担当。
-            「一人ひとりの体質に合わせたオーダーメイドの施術」をモットーに、
-            東洋医学の知見と丁寧なカウンセリングで、お客様のからだの声に耳を傾けています。
+            鍼灸師として10年以上、美容鍼灸や慢性的なお悩みを中心に、施術を行ってきました。「その日の状態に合わせたオーダーメイドの施術」を大切に、西洋医学・東洋医学の知見と丁寧なカウンセリングで、お客様のからだの声にじっくり耳を傾けています。
           </p>
         </div>
-        <ul class="therapist-creds">
-          <li>はり師・きゅう師 国家資格保有</li>
-          <li>◯◯鍼灸専門学校 卒業</li>
-          <li>美容鍼灸 認定コース修了</li>
-        </ul>
       </div>
     </div>
-  </div>
+  </div><!-- /.container -->
 </section>
 
 <!-- ==================== Salon ==================== -->
@@ -435,17 +508,16 @@
   <div class="container access-grid">
     <div class="access-map reveal">
       <!--
-        Googleマップ埋め込み:
-        下記は仮のiframeです。Googleマップで実際の住所を検索し、
-        「共有」→「地図を埋め込む」から取得したiframeコードに差し替えてください。
+        Googleマップ埋め込み: プラスコード 8CPW+HF(藤沢市)の位置(緯度 35.3364375 / 経度 139.4461875)にピンを立てています。
+        位置を変えるときは、q= のあとの「緯度,経度」を書き換えてください。
       -->
-      <iframe 
-  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d288.6019400700497!2d139.44611149715413!3d35.336278865307186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1789028134201!5m2!1sja!2sjp" 
-  width="600" 
-  height="450" 
-  style="border:0;" 
-  allowfullscreen="" 
-  loading="lazy" 
+      <iframe
+  src="https://www.google.com/maps?q=35.3364375,139.4461875&z=18&hl=ja&output=embed"
+  width="600"
+  height="450"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"
   referrerpolicy="strict-origin-when-cross-origin"
   title="鍼ノ木 地図">
 </iframe>
@@ -466,13 +538,14 @@
         <dt>電話</dt>
         <dd>000-0000-0000</dd>
         <dt>営業時間</dt>
-        <dd>11:00 - 20:00</dd>
+        <dd>10:00 - 20:00</dd>
         <dt>定休日</dt>
         <dd>不定休</dd>
       </dl>
 
       <div class="hero-actions access-actions">
-        <a href="#" class="btn btn-primary">LINEで予約</a>
+        <a href="https://lin.ee/xS7wNyR" class="btn btn-primary" target="_blank" rel="noopener">LINEで予約</a>
+        <a href="https://salona.jp/book/harino-ki" class="btn btn-outline" target="_blank" rel="noopener">Webで予約</a>
       </div>
       <p class="access-note">＊ご不明点などお問い合わせもLINEからお気軽にどうぞ</p>
     </div>
@@ -535,12 +608,12 @@
     <div class="footer-top">
       <div class="footer-id">
         <div class="footer-brand">
-          <img src="assets/logo-wide.png" alt="鍼ノ木 HARINOKI 鍼灸整体美容サロン">
+          <img src="assets/logo-footer.png" alt="鍼ノ木 HARINOKI 鍼灸整体美容サロン">
         </div>
         <div class="footer-social">
           <a href="#" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
           <a href="https://note.com/harinoki" aria-label="note" target="_blank" rel="noopener"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><path d="M8.5 16.5v-6c0-1 .8-1.7 1.8-1.7h2.2c1.8 0 3 1.1 3 2.9v4.8"/></svg></a>
-          <a href="#" aria-label="LINE"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M21 11.5c0-4.4-4.5-8-10-8S1 7.1 1 11.5c0 3.9 3.5 7.2 8.3 7.9.3.1.8.3.9.6.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6 1.1-.5 5.9-3.5 8-6 1.3-1.5 2-3 2-4.9z"/><text x="11" y="13.9" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="6.4" font-weight="700" letter-spacing="0.2" fill="currentColor" stroke="none">LINE</text></svg></a>
+          <a href="https://lin.ee/xS7wNyR" aria-label="LINE" target="_blank" rel="noopener"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M21 11.5c0-4.4-4.5-8-10-8S1 7.1 1 11.5c0 3.9 3.5 7.2 8.3 7.9.3.1.8.3.9.6.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6 1.1-.5 5.9-3.5 8-6 1.3-1.5 2-3 2-4.9z"/><text x="11" y="13.9" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="6.4" font-weight="700" letter-spacing="0.2" fill="currentColor" stroke="none">LINE</text></svg></a>
         </div>
       </div>
       <div class="footer-message">
