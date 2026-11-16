@@ -976,6 +976,40 @@ section { position: relative; }
 }
 .price-table tbody tr:last-child td { border-bottom: none; }
 
+.price-table thead th small {
+  font-size: 11px;
+  font-weight: 400;
+  opacity: 0.85;
+}
+.price-table td.plan-name small {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+.price-table td.plan-name small.plan-desc {
+  margin: 4px 0 2px;
+  line-height: 1.6;
+  white-space: normal;
+  max-width: 340px;
+}
+.price-table thead th.th-sub { padding-bottom: 8px; }
+.price-table thead th.th-group {
+  text-align: center;
+  padding: 10px 12px 12px;
+  font-size: 12.5px;
+  font-weight: 400;
+  color: #f0dfb8;
+  letter-spacing: 0.04em;
+  border-top: 1px solid rgba(255,255,255,0.28);
+}
+.price-table thead th[rowspan] { vertical-align: middle; }
+.price-table tbody td.recommended-cell {
+  background: linear-gradient(0deg, rgba(203,170,107,0.14), rgba(203,170,107,0.14));
+  color: var(--gold-deep);
+  font-weight: 600;
+}
 .price-table td.plan-name {
   text-align: left;
   font-family: var(--font-jp-sans);
@@ -992,6 +1026,7 @@ section { position: relative; }
   position: relative;
   color: var(--gold-deep);
 }
+.price-table .recommended-cell .badge { display: table; margin: 0 auto 4px; color: var(--white); font-family: var(--font-jp-sans); font-weight: 500; }
 .price-table .badge {
   display: inline-block;
   margin-bottom: 4px;
@@ -1004,18 +1039,17 @@ section { position: relative; }
 }
 
 @media (max-width: 560px) {
-  .price-table thead th,
-  .price-table tbody td { padding: 12px 8px; font-size: 13px; }
-  .price-table tbody td { font-size: 15px; }
-  .price-table { min-width: 520px; }
-  .price-scroll-hint {
-    display: block;
-    margin: 0 0 8px;
-    text-align: right;
-    font-size: 12px;
-    letter-spacing: 0.06em;
-    color: var(--ink-soft);
-  }
+  .price-table { table-layout: fixed; min-width: 0; }
+  .price-table thead th { padding: 12px 2px; font-size: 11.5px; letter-spacing: 0; }
+  .price-table thead th:first-child { width: 38%; padding-left: 10px; }
+  .price-table tbody td { padding: 14px 2px; font-size: 13.5px; letter-spacing: 0; }
+  .price-table td.plan-name { white-space: normal; padding-left: 10px; font-size: 12.5px; line-height: 1.5; }
+  .price-table td.plan-name small { font-size: 11px; }
+  .price-table td.plan-name small.plan-desc { font-size: 10.5px; line-height: 1.5; }
+  .price-table thead th small { display: block; font-size: 10px; }
+  .price-table thead th.th-group { font-size: 11px; padding: 8px 2px 10px; }
+  .price-table .recommended-cell .badge { font-size: 9.5px; padding: 2px 6px; }
+  .price-scroll-hint { display: none; }
 }
 
 .menu-note span { display: block; }
@@ -1507,4 +1541,202 @@ section { position: relative; }
   .hero-actions { flex-direction: column; width: 100%; }
   .hero-actions .btn { width: 100%; justify-content: center; }
   .therapist-card { padding: 24px; }
+}
+
+
+/* ==========================================================================
+   Mobile compact (スマホ表示を縦に短く)
+   ========================================================================== */
+
+@media (max-width: 720px) {
+  :root { --section-y: 36px; }
+  body { line-height: 1.75; }
+
+  .section-head { margin-bottom: 20px; }
+  .section-title { margin-bottom: 10px; }
+  .section-lead { font-size: 13px; line-height: 1.7; }
+
+  /* --- Concern: 2列にして縮める --- */
+  .concern-list { grid-template-columns: 1fr 1fr; gap: 0; }
+  .concern-group,
+  .concern-group:nth-child(odd),
+  .concern-group:nth-child(even) {
+    padding: 14px 12px;
+    border-top: 1px solid var(--line);
+    border-left: none;
+  }
+  .concern-group:nth-child(even) { border-left: 1px solid var(--line); }
+  .concern-group:nth-child(odd) { padding-left: 0; }
+  .concern-group:nth-child(-n+2) { border-top: none; padding-top: 0; }
+  .concern-head { gap: 8px; margin-bottom: 8px; }
+  .concern-icon { width: 34px; height: 34px; }
+  .concern-icon svg { width: 18px; height: 18px; }
+  .concern-label { font-size: 11px; letter-spacing: 0.14em; }
+  .concern-title { font-size: 14.5px; margin-bottom: 6px; }
+  .concern-items li { font-size: 12.5px; line-height: 1.6; padding-left: 11px; }
+  .concern-items li + li { margin-top: 2px; }
+  .concern-items li::before { left: 0; top: 0.8em; width: 3px; height: 3px; }
+  .concern-actions { margin-top: 20px; }
+
+  /* --- Concept: ①〜⑤を横スクロール --- */
+  .concept-grid { gap: 20px; }
+  .concept-headline { font-size: 17px; line-height: 1.7; margin-bottom: 14px; }
+  .concept-copy p { font-size: 13.5px; line-height: 1.75; margin-bottom: 10px; }
+  .concept-points {
+    display: flex;
+    gap: 12px;
+    border-top: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -20px;
+    padding: 2px 20px 14px;
+    scroll-padding-left: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold) transparent;
+  }
+  .concept-points::-webkit-scrollbar { height: 4px; }
+  .concept-points::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 999px; }
+  .concept-point {
+    flex: 0 0 78%;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px 16px 18px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--gold);
+    border-radius: var(--radius);
+    scroll-snap-align: start;
+  }
+  .concept-icon { width: 40px; height: 40px; }
+  .concept-icon svg { width: 22px; height: 22px; }
+  .concept-badge { width: 18px; height: 18px; font-size: 11px; top: -6px; left: -6px; }
+  .concept-point h3 { font-size: 15.5px; margin-bottom: 6px; }
+  .concept-point p { font-size: 13px; line-height: 1.75; }
+
+  /* --- Menu --- */
+  .menu-group-title { font-size: 16.5px; margin-bottom: 12px; padding-bottom: 8px; }
+  .menu-group-desc { font-size: 12.5px; margin: -2px 0 14px; line-height: 1.7; }
+  .menu-groups { gap: 26px; }
+  .menu-item { padding: 12px 4px; }
+  .menu-item-name { font-size: 14.5px; }
+  .menu-item-name small { font-size: 11.5px; line-height: 1.6; }
+  .menu-item-price { font-size: 17px; }
+  .menu-note { margin-top: 20px; padding-top: 14px; font-size: 12px; line-height: 1.7; }
+
+  /* --- Therapist: 約65%サイズ(写真を左に小さく) --- */
+  .therapist-card {
+    grid-template-columns: 124px 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 0 14px;
+    align-content: start;
+    padding: 16px;
+  }
+  .therapist-detail { display: contents; }
+  .therapist-photo { grid-column: 1; grid-row: 1 / span 3; max-width: none; margin: 0; align-self: center; }
+  .therapist-role { grid-column: 2; grid-row: 1; justify-self: start; align-self: end; font-size: 10.5px; padding: 2px 11px; margin: 0 0 6px; }
+  .therapist-name { grid-column: 2; grid-row: 2; font-size: 19px; margin: 0 0 4px; align-self: center; }
+  .therapist-creds { grid-column: 2; grid-row: 3; margin: 0; gap: 2px; align-self: start; }
+  .therapist-name + .therapist-creds { margin: 0; }
+  .therapist-creds li { font-size: 12px; }
+  .therapist-creds li::before { top: 0.8em; }
+  .therapist-bio { grid-column: 1 / -1; grid-row: 4; margin-top: 12px; }
+  .therapist-bio p { font-size: 13px; line-height: 1.75; margin: 0; }
+
+  /* --- Salon: 写真カードを小さく --- */
+  .news-card.salon-card { flex-basis: 64%; }
+  .salon .news-carousel-nav { margin-bottom: 6px; }
+  .salon .news-arrow { width: 30px; height: 30px; font-size: 14px; }
+  .salon-photo { aspect-ratio: 16 / 10; }
+  .salon-caption { padding: 10px 12px 14px; font-size: 12.5px; line-height: 1.7; }
+  .salon-photo .tile-icon { width: 30px; height: 30px; }
+  .news-feed { gap: 12px; padding-bottom: 12px; }
+
+  /* --- Access --- */
+  .access-grid { gap: 20px; }
+  .access-map { min-height: 0; }
+  .access-map iframe { height: 160px; min-height: 0; }
+  .access-info dl { font-size: 13.5px; }
+  .access-info dd, .access-info dt { line-height: 1.7; }
+}
+
+
+/* ==========================================================================
+   Desktop compact (PC表示を余白中心にコンパクトに)
+   ========================================================================== */
+
+@media (min-width: 721px) {
+  :root { --section-y: 40px; }
+  body { line-height: 1.8; }
+
+  .section-head { margin-bottom: 24px; }
+  .section-title { margin-bottom: 12px; }
+
+  .hero { padding-bottom: 36px; }
+  .hero-inner { padding-top: 24px; }
+
+  /* Concern */
+  .concern-list { gap: 24px 0; }
+  .concern-head { margin-bottom: 10px; }
+  .concern-icon { width: 44px; height: 44px; }
+  .concern-title { margin-bottom: 8px; font-size: 17px; }
+  .concern-items li { line-height: 1.7; }
+  .concern-items li + li { margin-top: 3px; }
+  .concern-actions { margin-top: 24px; }
+
+  /* Concept */
+  .concept-grid { gap: 40px; }
+  .concept-headline { margin-bottom: 18px; }
+  .concept-copy p { margin-bottom: 10px; line-height: 1.8; }
+  .concept-point { padding: 16px 0; gap: 18px; }
+  .concept-icon { width: 46px; height: 46px; }
+  .concept-point h3 { margin-bottom: 4px; font-size: 16px; }
+  .concept-point p { line-height: 1.75; }
+
+  /* Menu */
+  .menu-groups { gap: 28px; }
+  .menu-group-title { margin-bottom: 14px; padding-bottom: 8px; }
+  .menu-item { padding: 12px 6px; }
+  .menu-group-desc { margin: -4px 0 14px; }
+  .price-table thead th { padding: 11px 12px; }
+  .price-table tbody td { padding: 12px; }
+  .price-table thead th.th-group { padding: 8px 12px 10px; }
+  .menu-note { margin-top: 20px; padding-top: 14px; }
+
+  /* Therapist: 約70% */
+  .therapist-card {
+    grid-template-columns: 224px 1fr;
+    gap: 36px;
+    padding: 32px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .therapist-role { margin-bottom: 10px; padding: 3px 12px; font-size: 11px; }
+  .therapist-name { font-size: 22px; }
+  .therapist-name + .therapist-creds { margin: 4px 0 12px; }
+  .therapist-creds { gap: 4px; }
+  .therapist-creds li { font-size: 13px; }
+  .therapist-bio p { font-size: 14px; line-height: 1.8; margin-bottom: 0; }
+
+  /* Salon: 約70% */
+  .news-card.salon-card { flex: 0 0 min(308px, 86%); }
+  .salon-photo { aspect-ratio: 16 / 10; }
+  .salon-caption { padding: 12px 16px 16px; font-size: 13.5px; line-height: 1.75; }
+  .salon .news-carousel-nav { margin-bottom: 8px; }
+  .salon .news-feed { gap: 16px; padding-bottom: 8px; justify-content: safe center; }
+  .salon .section-head { margin-bottom: 20px; }
+
+  /* Access: 約70% */
+  .access-grid { gap: 40px; align-items: center; max-width: 840px; margin-left: auto; margin-right: auto; }
+  .access-map { min-height: 0; }
+  .access-map iframe { min-height: 0; height: 300px; }
+  .access-info dl { gap: 10px 16px; margin-bottom: 18px; grid-template-columns: 80px 1fr; }
+  .access-info dt { font-size: 13px; }
+  .access-info dd { font-size: 13.5px; line-height: 1.7; }
+  .access-info .section-title { font-size: 26px; margin-bottom: 14px; }
+  .access-note { margin-top: 8px; font-size: 12px; }
+
+  /* News / Column / CTA / Footer */
+  .news-card { padding: 20px 22px 22px; gap: 12px; }
+  .cta-band { padding: 56px 0; }
 }

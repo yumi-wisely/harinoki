@@ -33,7 +33,7 @@
 <!-- 構造化データ(LocalBusiness): 検索結果に店舗情報を伝えるためのものです。
      電話番号は、実際の番号が決まったら "telephone": "+81-XX-XXXX-XXXX" の形で追記してください。
      Instagram の公式アカウントができたら、sameAs にURLを追加してください。
-     営業時間の「不定休」はこの形式では表せないため、毎日 10:00〜20:00 として記載しています。
+     営業時間の「不定休」はこの形式では表せないため、毎日 10:00〜19:00 として記載しています。
      位置情報は、プラスコード 8CPW+HF(藤沢市)の中心の座標です。 -->
 <script type="application/ld+json">
 {
@@ -80,10 +80,10 @@
         "Sunday"
       ],
       "opens": "10:00",
-      "closes": "20:00"
+      "closes": "19:00"
     }
   ],
-  "priceRange": "¥9,500〜¥15,000",
+  "priceRange": "¥9,000〜¥17,000",
   "areaServed": {
     "@type": "City",
     "name": "藤沢市"
@@ -341,67 +341,59 @@
       </p>
     </div>
 
-    <!--
-      料金メニュー:
-      項目名・時間・価格はすべて仮の内容です。実際の内容に差し替えてください。
-    -->
     <div class="menu-groups reveal">
       <div>
-        <h3 class="menu-group-title">初めてお越しいただく方へ 初回コース<span>WHOLE BODY</span></h3>
+        <h3 class="menu-group-title">初めてお越しいただく方へ 初回コース<span>FIRST VISIT</span></h3>
         <div class="menu-items">
           <div class="menu-item">
-            <div class="menu-item-name">カウンセリング + オーダーメイド鍼灸整体＋美顔鍼<small>その日のご体調やお悩みに合わせて鍼灸と整体を調合・美顔鍼付き / 75分</small></div>
-            <div class="menu-item-price">¥9,000</div>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <h3 class="menu-group-title">2回目からのスポットメニュー<span>BEAUTY</span></h3>
-        <div class="menu-items">
-          <div class="menu-item">
-            <div class="menu-item-name">オーダーメイド鍼灸整体<small>鍼灸と整体をお悩みに沿って調合・首から下のお身体 / 70分</small></div>
-            <div class="menu-item-price">¥12,000</div>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-name">オーダーメイド鍼灸整体 + 美顔鍼<small>鍼灸と整体をお悩みに沿って調合・美顔鍼付き / 70分</small></div>
-            <div class="menu-item-price">¥15,000</div>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-name">ロイヤルハリネズミ美容鍼<small>お顔と頭に特化した美容鍼治療 / 40分</small></div>
+            <div class="menu-item-name">初回　全身＋美顔鍼<small>カウンセリングからお悩みや体質に合わせ、鍼灸と整体で全身にアプローチします / カウンセリング約10分とお支度含め約90分</small></div>
             <div class="menu-item-price">¥9,500</div>
           </div>
         </div>
       </div>
 
-<div>
-        <h3 class="menu-group-title">月額定期メンテナンスコース<span>MAINTENANCE</span></h3>
-        <p class="menu-group-desc">不調を繰り返さない健やかさと美しさを育むために、無理なく続けられるお得な月額料金をご用意しました。</p>
-        
-        <!-- 比較テーブル部分 -->
+      <div>
+        <h3 class="menu-group-title">2回目からのメニュー<span>MENU</span></h3>
+        <p class="menu-group-desc">月1回・月2回のメンテナンスコースは、毎月カードでの自動引き落としでお支払いいただくコースです。1回あたりの料金がお得になり、不調を繰り返さない健やかさと美しさを、無理なく続けられます。</p>
+
         <p class="price-scroll-hint" aria-hidden="true">← 左右にスクロールできます →</p>
         <div class="price-table-wrapper">
           <table class="price-table">
             <thead>
               <tr>
-                <th>コース名</th>
-                <th>オーダーメイド鍼灸整体</th>
-                <th>オーダーメイド鍼灸整体＋美顔鍼</th>
-                <th>ロイヤルハリネズミ美容鍼</th>
+                <th rowspan="2">メニュー</th>
+                <th rowspan="2">スポット</th>
+                <th class="th-sub">月1回コース<br><small>1回あたり</small></th>
+                <th class="th-sub">月2回コース<br><small>1回あたり</small></th>
+              </tr>
+              <tr>
+                <th colspan="2" class="th-group">毎月カード引き落とし</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="plan-name">月1回コース（1回料金）</td>
+                <td class="plan-name">美容整体<small class="plan-desc">筋肉の張りや骨格を矯正し見た目の美しさを追求します。（鍼灸治療は行いません）</small><small>45分</small></td>
                 <td>¥11,000</td>
-                <td>¥13,500</td>
-                <td>¥8,500</td>
-              </tr>
-              <tr class="recommended-row">
-                <td class="plan-name"><span class="badge">人気</span>月2回コース（1回料金）</td>
                 <td>¥10,000</td>
-                <td>¥12,000</td>
-                <td>¥7,500</td>
+                <td>¥9,000</td>
+              </tr>
+              <tr>
+                <td class="plan-name">鍼灸師調合 全身<small class="plan-desc">全身のお悩みに、整体と鍼灸でアプローチします（お顔は含みません）</small><small>65分</small></td>
+                <td>¥13,000</td>
+                <td>¥11,500</td>
+                <td>¥10,000</td>
+              </tr>
+              <tr>
+                <td class="plan-name">鍼灸師調合 全身＋美顔鍼<small class="plan-desc">お顔含む全身のお悩みに、整体と鍼灸でアプローチします</small><small>75分</small></td>
+                <td>¥17,000</td>
+                <td>¥15,000</td>
+                <td class="recommended-cell"><span class="badge">☆ 人気</span>¥12,500</td>
+              </tr>
+              <tr>
+                <td class="plan-name">ロイヤルハリネズミ美容鍼<small class="plan-desc">鍼灸とマッサージをお顔〜頭にフォーカスし、お顔のお悩みにアプローチします。</small><small>45分</small></td>
+                <td>¥13,000</td>
+                <td>¥11,500</td>
+                <td>¥10,000</td>
               </tr>
             </tbody>
           </table>
@@ -413,7 +405,7 @@
     <p class="menu-note reveal">
       <span>＊価格は全て税込価格です</span>
       <span>＊男性の方はご紹介のみとさせていただきます</span>
-      <span>＊マタニティー整体もおこなっております、ご妊娠中の方はお知らせください</span>
+      <span>＊ご妊娠中の方は妊娠期間によってできる施術が異なりますので、事前にお知らせください</span>
     </p>
   </div><!-- /.container -->
 </section><!-- /.menu -->
@@ -538,7 +530,7 @@
         <dt>電話</dt>
         <dd>000-0000-0000</dd>
         <dt>営業時間</dt>
-        <dd>10:00 - 20:00</dd>
+        <dd>10:00 - 19:00</dd>
         <dt>定休日</dt>
         <dd>不定休</dd>
       </dl>
