@@ -704,6 +704,7 @@ section { position: relative; }
   color: var(--ink);
 }
 .concern-items li + li { margin-top: 6px; }
+.concern-items .nw { white-space: nowrap; }
 .concern-items li::before {
   content: "";
   position: absolute;
@@ -1739,4 +1740,73 @@ section { position: relative; }
   /* News / Column / CTA / Footer */
   .news-card { padding: 20px 22px 22px; gap: 12px; }
   .cta-band { padding: 56px 0; }
+}
+
+
+/* ---------- Menu intro (MENU & PRICE の前の導入文) ---------- */
+.menu-intro {
+  max-width: 760px;
+  margin: 0 auto 32px;
+  padding-bottom: 28px;
+  text-align: center;
+  position: relative;
+  font-family: var(--font-jp-serif);
+  line-height: 2;
+  letter-spacing: 0.04em;
+}
+.menu-intro::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 56px;
+  height: 1px;
+  background: var(--gold-deep);
+  transform: translateX(-50%);
+}
+.menu-intro span { display: inline-block; }
+/* 強弱: 問いかけ(小・やわらかく) → 考え方(中・濃く) → 結び(大・金) */
+.menu-intro p { margin: 0 0 1.6em; }
+.menu-intro p:nth-child(1) { font-size: clamp(12.5px, 0.4vw + 11px, 14.5px); color: var(--ink-soft); }
+.menu-intro p:nth-child(2) { font-size: clamp(14px, 0.6vw + 12px, 17px); color: var(--teal-deep); }
+.menu-intro .menu-intro-em {
+  margin: 0;
+  font-size: clamp(16px, 1vw + 12px, 22px);
+  color: var(--gold-deep);
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 720px) {
+  .menu-intro { margin-bottom: 22px; padding-bottom: 18px; line-height: 1.85; }
+  .menu-intro p { margin-bottom: 1.1em; }
+  .menu-intro p:nth-child(1) { font-size: 12.5px; }
+  .menu-intro p:nth-child(2) { font-size: 14px; }
+  .menu-intro .menu-intro-em { font-size: 16px; }
+}
+
+
+/* ---------- 料金表: おすすめ2メニューを目立たせる ---------- */
+.price-table tbody tr.recommended-row td {
+  background: linear-gradient(0deg, rgba(203,170,107,0.12), rgba(203,170,107,0.12));
+  border-bottom-style: solid;
+  border-bottom-color: rgba(203,170,107,0.35);
+}
+.price-table tbody tr.recommended-row td.recommended-cell {
+  background: linear-gradient(0deg, rgba(203,170,107,0.26), rgba(203,170,107,0.26));
+}
+.price-table tbody tr.recommended-row td.plan-name {
+  color: var(--teal-deep);
+  font-weight: 700;
+  font-size: 15.5px;
+  box-shadow: inset 4px 0 0 var(--gold-deep);
+}
+.price-table tbody tr.recommended-row td:not(.plan-name) {
+  color: var(--teal-deep);
+  font-weight: 600;
+}
+.price-table tbody tr.recommended-row td.recommended-cell { color: var(--gold-deep); }
+.price-table tbody tr.recommended-row td.plan-name small { font-weight: 400; color: var(--ink-soft); }
+
+@media (max-width: 560px) {
+  .price-table tbody tr.recommended-row td.plan-name { font-size: 13px; padding-left: 12px; }
 }
